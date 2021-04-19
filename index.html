@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="img/mic.png">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>StandUpMemeGen</title>
 </head>
 
-<body onload="onInit()">
+<body class="margin-auto" onload="onInit()">
 
     <header>
-        <div class="nav-bar-container">
+        <div class="nav-bar-container flex">
             <div class="head-logo logo">LOGO</div>
-            <ul class="nav-bar">
-                <li class="gallery-pointer">Gallery</li>
-                <li class="my-memes">My Memes</li>
-                <li class="about">About</li>
+            <ul class="nav-bar flex clean-list">
+                <li class="gallery-pointer pointer">Gallery</li>
+                <li class="my-memes pointer">My Memes</li>
+                <li class="about pointer">About</li>
             </ul>
         </div>
     </header>
-    <section class="search-container">
+    <section class="search-container margin-auto flex">
         <div class="search-word-dropdown dropdown">
-            <button onclick="openFilters()" class="filter-dropdown">
+            <button onclick="openFilters()" class="filter-dropdown  pointer">
                 Click to Search</button>
             <div class="dropdown-content">
                 <input type="text" placeholder="Search..." class="filter-input" onclick="filterMemes()">
@@ -36,38 +36,39 @@
                 <a href="#other">Other</a>
             </div>
         </div>
-        <div class="search-filters">
-            <h1 class="filter-crazy">Crazy</h3>
-            <h5 class="filter-other">Other</h3>
-            <h4 class="filter-fight">Fight</h3>
-            <h6 class="filter-stupid">Stupid</h3>
-            <h3 class="filter-sex">Sex</h3>
-            <h2 class="filter-funny">Funny</h3>
+        <div class="search-filters flex">
+            <h1 class="filter-crazy pointer">Crazy</h3>
+            <h5 class="filter-other pointer">Other</h3>
+            <h4 class="filter-fight pointer">Fight</h3>
+            <h6 class="filter-stupid pointer">Stupid</h3>
+            <h3 class="filter-sex pointer">Sex</h3>
+            <h2 class="filter-funny pointer">Funny</h3>
         </div>
     </section>
-    <section class="gallery-container">
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
-        <div class="photo">MEME</div>
+    <section class="gallery-container margin-auto flex">
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
+        <div class="meme-img pointer">MEME</div>
     </section>
-    <main class="meme-editor-container">
+    <main class="meme-editor-container margin-auto flex">
         <div class="canvas-container">
-            <canvas></canvas>
+            <canvas id="meme-canvas" width="500" height="500" onclick="draw(event)">
+            </canvas>
         </div>
         <div class="editor-container">
             <input type="text" class="text-line"></input>
@@ -107,6 +108,31 @@
     </main>
     <footer class="footer">
         <div class="footer-logo logo">LOGO</div>
+        
+        <ul class="social-nav">
+            <li>
+                <a class="facebook social" href="#">
+                    <img class="social-image" src="img/F@1X.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a class="twitter social" href="#">
+                    <img class="social-image" src="img/L@1X.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a class="be social" href="#">
+                    <img class="social-image" src="img/E@1X.png" alt="" />
+                </a>
+            </li>
+            <li>
+                <a class="dribble social" href="#">
+                    <img class="social-image" src="img/D@1X.png" alt="" />
+                </a>
+            </li>
+        </ul>
+
+
         <ul class="social-icons">
             <li class="facebook">F</li>
             <li class="github">G</li>

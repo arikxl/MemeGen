@@ -5,11 +5,23 @@ function onInit() {
 
 }
 
-
-
 function openFilters() {
     document.querySelector('.dropdown-content').classList.toggle('show');
 }
+
+
+function clearCanvas() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+}
+
+
+function downloadCanvas(elLink) {
+    // const data = gCanvas.toDataURL()
+    console.log('test');
+    elLink.href = gCanvas.toDataURL()
+    elLink.download = 'my-img.jpg'
+}
+
 
 
 // צריך להחליף לפונקציית פילטר נורמלית

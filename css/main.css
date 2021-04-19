@@ -1,0 +1,95 @@
+@import "fonts.css";
+@import "helpers.css";
+@import "header.css";
+@import "search&filter.css";
+@import "footer.css";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgreen;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.gallery-container {
+    width: 75%;
+    gap: 5px;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 150px);
+    display: grid;
+    background: linear-gradient(-45deg,#7fff00, #e73c7e,white, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;padding: 5px;
+    border-radius: 10px;
+    display: none;
+}
+
+.meme-img {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rebeccapurple;
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+
+
+
+
+.meme-editor-container {
+    background-color: pink;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.canvas-container {
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid silver;
+    background: linear-gradient(-45deg,#7fff00, #ee7752, #e73c7e,white, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;    padding: 5px;    border-radius: 20px;
+}
+
+#meme-canvas {
+    margin: 20px auto;
+    border: 1px solid white;
+    display: block;
+    border-radius: 20px;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
