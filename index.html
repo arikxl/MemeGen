@@ -23,8 +23,27 @@
         </div>
     </header>
     <section class="search-container">
-        <div class="search-word-input"></div>
-        <div class="search-filters"></div>
+        <div class="search-word-dropdown dropdown">
+            <button onclick="openFilters()" class="filter-dropdown">
+                Click to Search</button>
+            <div class="dropdown-content">
+                <input type="text" placeholder="Search..." class="filter-input" onclick="filterMemes()">
+                <a href="#stupid">Stupid</a>
+                <a href="#crazy">Crazy</a>
+                <a href="#fight">Fight</a>
+                <a href="#sex">Sex</a>
+                <a href="#funny">Funny</a>
+                <a href="#other">Other</a>
+            </div>
+        </div>
+        <div class="search-filters">
+            <h1 class="filter-crazy">Crazy</h3>
+            <h5 class="filter-other">Other</h3>
+            <h4 class="filter-fight">Fight</h3>
+            <h6 class="filter-stupid">Stupid</h3>
+            <h3 class="filter-sex">Sex</h3>
+            <h2 class="filter-funny">Funny</h3>
+        </div>
     </section>
     <section class="gallery-container">
         <div class="photo">MEME</div>

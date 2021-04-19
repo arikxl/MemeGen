@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color:lightgreen;
+    background-color: lightgreen;
     color: white;
     margin: 0;
 }
@@ -16,8 +16,6 @@ body {
     text-align: center;
     height: 3rem;
     border-bottom: 3px solid white;
-    margin-bottom:20px;
-
 }
 
 .head-logo {
@@ -41,9 +39,101 @@ body {
 
 .nav-bar li:hover {
     background-color: white;
-    color:black;
+    color: black;
     box-shadow: -3px -3px 3px 3px lightseagreen;
 }
+
+
+.filter-dropdown {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width:150px;
+}
+
+.filter-dropdown:hover,
+.filter-dropdown:focus {
+    background-color: #3e8e41;
+}
+
+.filter-input {
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width:150px;
+}
+
+.filter-input:focus {
+    outline: 3px solid #ddd;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 150px;
+    text-align: center;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.search-filters{
+    width:80%;
+    display: flex;
+    justify-content:space-around;
+    line-height: 50px;;
+}
+
+
+
+
+
+
+
+.search-container {
+    width: 75%;
+    background-color: gold;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .gallery-container {
     width: 75%;
@@ -64,7 +154,7 @@ body {
     background-color: rebeccapurple;
     color: white;
     border: 3px solid black;
-    border-radius:10px;   
+    border-radius: 10px;
 }
 
 /* .meme-editor-container{
