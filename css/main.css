@@ -28,6 +28,9 @@ body {
     }
 }
 
+button {
+    cursor: pointer;
+}
 
 
 .gallery-container {
@@ -36,9 +39,10 @@ body {
     justify-content: space-between;
     grid-template-columns: repeat(auto-fill, 150px);
     display: grid;
-    background: linear-gradient(-45deg,#7fff00, #e73c7e,white, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #7fff00, #e73c7e, white, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;padding: 5px;
+    animation: gradient 15s ease infinite;
+    padding: 5px;
     border-radius: 10px;
     display: none;
 }
@@ -56,21 +60,34 @@ body {
 
 
 
+/* mmmmmmmmmmmmmmmmmm */
+
+
+.close-modal{
+    width:100px;
+    position: absolute;
+    left:0;
+    background-color: #23d5ab;
+}
+
+
 
 
 .meme-editor-container {
     background-color: pink;
     flex-direction: row;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: center;
 }
 
 .canvas-container {
     width: 550px;
-    margin: 0 auto;
-    border: 1px solid silver;
-    background: linear-gradient(-45deg,#7fff00, #ee7752, #e73c7e,white, #23a6d5, #23d5ab);
+    margin: 0;
+    background: linear-gradient(-45deg, #7fff00, #ee7752, #e73c7e, white, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;    padding: 5px;    border-radius: 20px;
+    animation: gradient 15s ease infinite;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 #meme-canvas {
@@ -81,15 +98,36 @@ body {
     background-color: white;
 }
 
+.editor-container {
+    /* width: 50%; */
+    background-color: darkblue;
+    flex-direction: column;
+    height:500px;
+    margin:20px 40px;
+}
+
+.editor-container button {
+    background: linear-gradient(60deg,white,silver ,white, silver);
+    background-size: 400% 400%;
+    animation: gradient 10s infinite;
+}
 
 
+.text-line{
+    font-size:1rem;
+    direction: rtl;
+    padding:10px;
+}
 
+.text-line-btns-container{
+    background-color: #e73c7e;
+}
+.text-line-btns-container button{
+    width: 20%;
+    font-size:20px;
 
-
-
-
-
-
-
-
-
+}
+.text-line-btns-image{
+    width:30px;
+    padding:5px;
+}

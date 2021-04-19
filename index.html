@@ -38,11 +38,11 @@
         </div>
         <div class="search-filters flex">
             <h1 class="filter-crazy pointer">Crazy</h3>
-            <h5 class="filter-other pointer">Other</h3>
-            <h4 class="filter-fight pointer">Fight</h3>
-            <h6 class="filter-stupid pointer">Stupid</h3>
-            <h3 class="filter-sex pointer">Sex</h3>
-            <h2 class="filter-funny pointer">Funny</h3>
+                <h5 class="filter-other pointer">Other</h3>
+                    <h4 class="filter-fight pointer">Fight</h3>
+                        <h6 class="filter-stupid pointer">Stupid</h3>
+                            <h3 class="filter-sex pointer">Sex</h3>
+                            <h2 class="filter-funny pointer">Funny</h3>
         </div>
     </section>
     <section class="gallery-container margin-auto flex">
@@ -66,22 +66,57 @@
         <div class="meme-img pointer">MEME</div>
     </section>
     <main class="meme-editor-container margin-auto flex">
+        <div class="close-modal">X</div>
         <div class="canvas-container">
             <canvas id="meme-canvas" width="500" height="500" onclick="draw(event)">
             </canvas>
         </div>
-        <div class="editor-container">
-            <input type="text" class="text-line"></input>
-            <div class="text-line-btns-container">
+        <div class="editor-container flex">
+            <div class="text-line-container flex">
+                <input class="text-line" type="text" name="add-txt" placeholder="החלק המצחיק נכנס פה" />
+                <button class="add-txt-btn" onclick="onAddTxt()">👍🏻</button>
+            </div>
+            <div class="text-line-btns-container flex">
                 <button class="move-line-up-btn btn" onclick="">⬆</button>
                 <button class="move-line-down-btn btn" onclick="">⬇</button>
-                <button class="switch-text-line-btn btn" onclick="">🔀</button>
-                <button class="add-text-line-btn btn" onclick="">➕</button>
-                <button class="delete-text-line-btn btn" onclick="">💀</button>
+                <button class="switch-text-line-btn btn" onclick="">
+                    <img class="text-line-btns-image"
+                        src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" />
+                </button>
+                <button class="add-text-line-btn btn" onclick="">
+                    <img class="text-line-btns-image" src="img/ICONS/add.png" alt="" />
+
+                </button>
+                <button class="delete-text-line-btn btn" onclick="clearCanvas()">
+                    <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
+                </button>
             </div>
             <div class="font-manipulation-container">
                 <div class="font-btns-container">
                     <button class="bigger-font-btn btn" onclick="">A+</button>
+                    <form action="/action_page.php">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                          <option value="volvo">Volvo</option>
+                          <option value="saab">Saab</option>
+                          <option value="opel">Opel</option>
+                          <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                      </form>
+
+
+                    <form action="/action_page.php" method="get">
+                        <label for="vol">Volume (between 1 and 50):</label>
+                        <input type="range" id="vol" name="vol" min="1" max="50">
+                        <input type="submit" value="Submit">
+                    </form>
+                    <form action="/action_page.php" method="get">
+                        <label for="vol">Volume (between 1 and 3):</label>
+                        <input type="range" id="vol" name="vol" min="1" max="3">
+                        <input type="submit" value="Submit">
+                    </form>
                     <button class="smaller-font-btn btn" onclick="">A-</button>
                     <button class="text-ltr-btn btn" onclick="">LTR</button>
                     <button class="text-align-center-btn btn" onclick="">center</button>
@@ -90,6 +125,17 @@
                 <div class="font-forms-container">
                     <form class="font-choice"></form>
                     <form class="stroke-color-choice" type="color"></form>
+                    <form action="/action_page.php">
+                        <label for="favcolor">Select your favorite color:</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                        <input type="submit" value="Submit">
+                    </form>
+                    <form action="/action_page.php">
+                        <label for="favcolor">Select your favorite color:</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                        <input type="submit" value="Submit">
+                    </form>
+
                     <form class="font-color-choice" type="color"></form>
                 </div>
             </div>
@@ -101,14 +147,14 @@
             </div>
             <div class="social-container">
                 <button class="save-btn btn" onclick="">Save</button>
-                <button class="download-btn btn" onclick="">Download</button>
+                <button class="download-btn btn" onclick="downloadCanvas(event)">Download</button>
                 <button class="share-btn btn" onclick="">Share</button>
             </div>
         </div>
     </main>
     <footer class="footer">
         <div class="footer-logo logo">LOGO</div>
-        
+
         <ul class="social-nav">
             <li>
                 <a class="facebook social" href="#">

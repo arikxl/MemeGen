@@ -1,9 +1,23 @@
 'use strict'
 
+
+var gCanvas;
+var gCtx;
+
+
+
 function onInit() {
     console.log('LETS MEME!');
-
+    gCanvas = document.querySelector('#meme-canvas');
+    gCtx = gCanvas.getContext('2d');
+    // drawImg()
 }
+
+
+
+
+
+
 
 function openFilters() {
     document.querySelector('.dropdown-content').classList.toggle('show');
@@ -12,14 +26,15 @@ function openFilters() {
 
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+    console.log('clear test');
 }
 
 
 function downloadCanvas(elLink) {
     // const data = gCanvas.toDataURL()
-    console.log('test');
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'my-img.jpg'
+    console.log('download test');
 }
 
 

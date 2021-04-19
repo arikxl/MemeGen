@@ -5,6 +5,7 @@
     width: 75%;
     background-color: gold;
     height: 100px;
+    display:none;
 }
 
 .filter-dropdown {
