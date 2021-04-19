@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/mic.png">
+    <link rel="stylesheet" href="css/app.css">
+    <title>StandUpMemeGen</title>
+</head>
+
+<body onload="onInit()">
+
+    <header>
+        <div class="nav-bar-container">
+            <div class="head-logo logo">LOGO</div>
+            <ul class="nav-bar">
+                <li class="gallery-pointer">Gallery</li>
+                <li class="my-memes">My Memes</li>
+                <li class="about">About</li>
+            </ul>
+        </div>
+    </header>
+    <section class="search-container">
+        <div class="search-word-input"></div>
+        <div class="search-filters"></div>
+    </section>
+    <section class="gallery-container">
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+        <div class="photo">MEME</div>
+    </section>
+    <main class="meme-editor-container">
+        <div class="canvas-container">
+            <canvas></canvas>
+        </div>
+        <div class="editor-container">
+            <input type="text" class="text-line"></input>
+            <div class="text-line-btns-container">
+                <button class="move-line-up-btn btn" onclick="">⬆</button>
+                <button class="move-line-down-btn btn" onclick="">⬇</button>
+                <button class="switch-text-line-btn btn" onclick="">🔀</button>
+                <button class="add-text-line-btn btn" onclick="">➕</button>
+                <button class="delete-text-line-btn btn" onclick="">💀</button>
+            </div>
+            <div class="font-manipulation-container">
+                <div class="font-btns-container">
+                    <button class="bigger-font-btn btn" onclick="">A+</button>
+                    <button class="smaller-font-btn btn" onclick="">A-</button>
+                    <button class="text-ltr-btn btn" onclick="">LTR</button>
+                    <button class="text-align-center-btn btn" onclick="">center</button>
+                    <button class="text-rtl-btn btn" onclick="">RTL</button>
+                </div>
+                <div class="font-forms-container">
+                    <form class="font-choice"></form>
+                    <form class="stroke-color-choice" type="color"></form>
+                    <form class="font-color-choice" type="color"></form>
+                </div>
+            </div>
+            <div class="stickers-container">
+                <div class="sticker1 sticker">❤</div>
+                <div class="sticker2 sticker">😎</div>
+                <div class="sticker3 sticker">👍🏻</div>
+                <div class="sticker4 sticker">💩</div>
+            </div>
+            <div class="social-container">
+                <button class="save-btn btn" onclick="">Save</button>
+                <button class="download-btn btn" onclick="">Download</button>
+                <button class="share-btn btn" onclick="">Share</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-logo logo">LOGO</div>
+        <ul class="social-icons">
+            <li class="facebook">F</li>
+            <li class="github">G</li>
+            <li class="telegram">T</li>
+        </ul>
+        <small class="small">2021 dskfskdjfhsjh</small>
+    </footer>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
