@@ -1,14 +1,8 @@
 'use strict'
 
+var gMyMemesId = 5001
 var gId = 1001;
 var gCtx;
-
-function initCanvas() {
-    gCtx = gElCanvas.getContext('2d')
-    console.log('gCtx:', gCtx)
-    renderCanvas()
-}
-
 
 const gMemes = [{
         id: gId++,
@@ -106,9 +100,8 @@ const gMemes = [{
 
 // console.table(gMemes);
 
-
 var gSelectedMeme = {
-    selectedImgId: 1,
+    selectedImgId: 0,
     selectedLineIdx: 0,
     exportReady: false,
     lines: [{
@@ -117,11 +110,13 @@ var gSelectedMeme = {
             x: (gElCanvas.width / 2),
             y: 50
         },
-        size: 50,
+        size: 40,
         align: 'center',
         fontColor: 'white',
-        strokeColor: 'red',
+        strokeColor: 'blue',
         isDragging: false,
         font: 'Heebo, sans-serif',
     }]
 }
+
+var gMyMemes = [];

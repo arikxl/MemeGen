@@ -4,16 +4,12 @@
 var gCanvas;
 var gCtx;
 
-
-
 function onInit() {
     console.log('LETS MEME!');
     gCanvas = document.querySelector('#meme-canvas');
     gCtx = gCanvas.getContext('2d');
     renderGallery();
-    // drawImg()
 }
-
 
 function onImgPick(id) {
     gMemes.selectedImgId = id;
@@ -21,7 +17,7 @@ function onImgPick(id) {
 };
 
 
-function openModal(isSavedMeme) {
+function openModal() {
     document.querySelector('.gallery-container').style.display = 'none';
     document.querySelector('.search-container').style.display = 'none';
     document.querySelector('.meme-editor-container').style.display = 'flex';
@@ -54,18 +50,9 @@ function openModal(isSavedMeme) {
 // }
 
 
-function clearCanvas() {
-    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
-    console.log('clear test');
-}
 
 
-function downloadCanvas(elLink) {
-    // const data = gCanvas.toDataURL()
-    elLink.href = gCanvas.toDataURL()
-    elLink.download = 'my-img.jpg'
-    console.log('download test');
-}
+
 
 
 
@@ -86,20 +73,10 @@ function filterMemes() {
     }
 }
 
-
-
-
 function closeModal() {
     document.querySelector('.gallery-container').style.display = 'grid';
     document.querySelector('.search-container').style.display = 'flex';
     document.querySelector('.meme-editor-container').style.display = 'none';
-    document.querySelector('.text-line placeholder').innerText = '';
     gSelectedMeme.lines[0].txt = '';
-    
-
-}
-
-function Onchange(value) {
-    console.log('value:', value)
-    console.log('value:')
+    document.querySelector('.text-line').value =''
 }

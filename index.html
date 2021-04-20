@@ -32,9 +32,9 @@
             <form onkeyup="onSearchImg(event)">
                 <input list="category" autocomplete="off" placeholder="Click to Search..." name="search-term" />
                 <datalist id="category">
-                  </datalist>
+                </datalist>
             </form>
-                <!-- <a href="#stupid">Stupid</a>
+            <!-- <a href="#stupid">Stupid</a>
                 <a href="#crazy">Crazy</a>
                 <a href="#fight">Fight</a>
                 <a href="#sex">Sex</a>
@@ -60,8 +60,8 @@
         </div>
         <div class="editor-container flex">
             <div class="text-line-container flex ">
-                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt()" placeholder="החלק המצחיק נכנס פה" />
-                <!-- <button class="add-txt-btn" onclick="onAddTxt()" >👍🏻</button> -->
+                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt()"
+                    placeholder="החלק המצחיק נכנס פה" />
             </div>
             <div class="text-line-btns-container flex">
                 <button class="move-line-up-btn btn" onclick="">⬆</button>
@@ -82,41 +82,36 @@
                 <div class="font-btns-container ">
                     <form action="" method="get" class="font-size-input space-between flex">
                         <label for="vol">Font Size:</label>
-                        <input type="range" name="font-size-input" min="10" max="30" value="16"
-                            class="pointer font-size-bar">
-                        <input type="submit" value="Submit">
+                        <input type="range" name="font-size-input" min="10" max="80" value="30"
+                            class="pointer font-size-bar" onchange="chooseFontSize(this)">
                     </form>
-
                     <form action="" method="get" class="font-direction-input flex space-between">
-                        <label for="vol">Font Direction:</label>
-                        <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer">
-                        <input type="submit" value="Submit">
+                        <label for="vol">Align Left</label>
+                        <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
+                            onchange="chooseTextAlign(this)"><span>Align Right</span></input>
                     </form>
                 </div>
 
 
                 <div class="font-forms-container ">
-                    <form action="" class="font-choice space-between flex" onchange(this.value)>
                         <label for="fonts">Font:</label>
-                        <select name="fonts">
+                        <select name="fonts" class="font-choice space-between flex" onchange="chooseFont(this)">
+                            <option value="Heebo">Heebo</option>
                             <option value="Amatic SC">Amatic SC</option>
                             <option value="Bellefair">Bellefair</option>
-                            <option value="Heebo">Heebo</option>
                             <option value="Karantina">Karantina</option>
                             <option value="Miriam Libre">Miriam Libre</option>
                             <option value="Varela Round">Varela Round</option>
-                        </select>
-                        <input type="submit" value="Submit">
-                    </form>
+                        </select >
                     <form action="" class="font-color-choice flex space-between">
                         <label for="font-color">Font Color:</label>
-                        <input type="color" name="font-color" class="color-box" value="#ff0000">
-                        <input type="submit" value="Submit">
+                        <input type="color" name="font-color" class="color-box"
+                        onchange="chooseFontColor(this)" value="#ffffff">
                     </form>
                     <form action="" class="stroke-color-choice flex space-between">
                         <label for="stroke-color">Stroke Color:</label>
-                        <input type="color" name="stroke-color" class="color-box" value="#ff0000">
-                        <input type="submit" value="Submit">
+                        <input type="color" name="stroke-color" class="color-box"
+                         value="#000000" onchange="chooseStrokeColor(this)">
                     </form>
                 </div>
             </div>
@@ -128,8 +123,16 @@
             </div>
             <div class="social-container space-between flex">
                 <button class="save-btn btn" onclick="">Save</button>
-                <button class="download-btn btn" onclick="downloadCanvas(event)">Download</button>
-                <button class="share-btn btn" onclick="">Share</button>
+                <button>
+                    <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
+                </button>
+
+                <div class="share-container btn">
+                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="shareToFacebook(this, event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="share-btn btn" type="submit">Share</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
