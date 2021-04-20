@@ -41,7 +41,7 @@ function downloadCanvas(elLink) {
 
 // צריך להחליף לפונקציית פילטר נורמלית
 function filterMemes() {
-    var filter, a,  txtValue;
+    var filter, a, txtValue;
     var filterInput = document.querySelector('.filter-input');
     filter = filterInput.value.toUpperCase();
     var filterDropdown = document.querySelector('.dropdown-content');
@@ -54,4 +54,23 @@ function filterMemes() {
             a[i].style.display = "none";
         }
     }
+}
+
+
+function openModal() {
+    document.querySelector('.gallery-container').style.display = 'none';
+    document.querySelector('.search-container').style.display = 'none';
+    document.querySelector('.meme-editor-container').style.display = 'flex';
+}
+
+function closeModal() {
+    document.querySelector('.gallery-container').style.display = 'grid';
+    document.querySelector('.search-container').style.display = 'flex';
+    document.querySelector('.meme-editor-container').style.display = 'none';
+}
+
+function Onchange(value){
+console.log('value:', value)
+console.log('value:')
+
 }

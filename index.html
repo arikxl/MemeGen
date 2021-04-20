@@ -8,6 +8,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/mic.png">
     <link rel="stylesheet" href="css/main.css">
     <title>StandUpMemeGen</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bellefair&family=Heebo:wght@200&family=Karantina:wght@700&family=Miriam+Libre&family=Varela+Round&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="margin-auto" onload="onInit()">
@@ -15,7 +19,7 @@
     <header>
         <div class="nav-bar-container flex">
             <div class="head-logo logo">LOGO</div>
-            <ul class="nav-bar flex clean-list">
+            <ul class="nav-bar flex clean-list space-between">
                 <li class="gallery-pointer pointer">Gallery</li>
                 <li class="my-memes pointer">My Memes</li>
                 <li class="about pointer">About</li>
@@ -45,8 +49,8 @@
                             <h2 class="filter-funny pointer">Funny</h3>
         </div>
     </section>
-    <section class="gallery-container margin-auto flex">
-        <div class="meme-img pointer">MEME</div>
+    <section class="gallery-container margin-auto flex space-between">
+        <div class="meme-img pointer" onclick="openModal()">MEME</div>
         <div class="meme-img pointer">MEME</div>
         <div class="meme-img pointer">MEME</div>
         <div class="meme-img pointer">MEME</div>
@@ -66,13 +70,13 @@
         <div class="meme-img pointer">MEME</div>
     </section>
     <main class="meme-editor-container margin-auto flex">
-        <div class="close-modal">X</div>
+        <div class="close-modal pointer" onclick="closeModal()">X</div>
         <div class="canvas-container">
             <canvas id="meme-canvas" width="500" height="500" onclick="draw(event)">
             </canvas>
         </div>
         <div class="editor-container flex">
-            <div class="text-line-container flex">
+            <div class="text-line-container flex ">
                 <input class="text-line" type="text" name="add-txt" placeholder="החלק המצחיק נכנס פה" />
                 <button class="add-txt-btn" onclick="onAddTxt()">👍🏻</button>
             </div>
@@ -91,89 +95,85 @@
                     <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
                 </button>
             </div>
+
+
             <div class="font-manipulation-container">
-                <div class="font-btns-container">
-                    <button class="bigger-font-btn btn" onclick="">A+</button>
-                    <form action="/action_page.php">
-                        <label for="cars">Choose a car:</label>
-                        <select name="cars" id="cars">
-                          <option value="volvo">Volvo</option>
-                          <option value="saab">Saab</option>
-                          <option value="opel">Opel</option>
-                          <option value="audi">Audi</option>
+                <div class="font-btns-container ">
+                    <form action="" method="get" class="font-size-input space-between flex">
+                        <label for="vol">Font Size:</label>
+                        <input type="range" name="font-size-input" min="10" max="30" value="16"
+                            class="pointer font-size-bar">
+                        <input type="submit" value="Submit">
+                    </form>
+
+                    <form action="" method="get" class="font-direction-input flex space-between">
+                        <label for="vol">Font Direction:</label>
+                        <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+
+                <div class="font-forms-container ">
+                    <form action="" class="font-choice space-between flex" onchange(this.value)>
+                        <label for="fonts">Font:</label>
+                        <select name="fonts">
+                            <option value="Amatic SC">Amatic SC</option>
+                            <option value="Bellefair">Bellefair</option>
+                            <option value="Heebo">Heebo</option>
+                            <option value="Karantina">Karantina</option>
+                            <option value="Miriam Libre">Miriam Libre</option>
+                            <option value="Varela Round">Varela Round</option>
                         </select>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                      </form>
-
-
-                    <form action="/action_page.php" method="get">
-                        <label for="vol">Volume (between 1 and 50):</label>
-                        <input type="range" id="vol" name="vol" min="1" max="50">
                         <input type="submit" value="Submit">
                     </form>
-                    <form action="/action_page.php" method="get">
-                        <label for="vol">Volume (between 1 and 3):</label>
-                        <input type="range" id="vol" name="vol" min="1" max="3">
+                    <form action="" class="font-color-choice flex space-between">
+                        <label for="font-color">Font Color:</label>
+                        <input type="color" name="font-color" class="color-box" value="#ff0000">
                         <input type="submit" value="Submit">
                     </form>
-                    <button class="smaller-font-btn btn" onclick="">A-</button>
-                    <button class="text-ltr-btn btn" onclick="">LTR</button>
-                    <button class="text-align-center-btn btn" onclick="">center</button>
-                    <button class="text-rtl-btn btn" onclick="">RTL</button>
-                </div>
-                <div class="font-forms-container">
-                    <form class="font-choice"></form>
-                    <form class="stroke-color-choice" type="color"></form>
-                    <form action="/action_page.php">
-                        <label for="favcolor">Select your favorite color:</label>
-                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                    <form action="" class="stroke-color-choice flex space-between">
+                        <label for="stroke-color">Stroke Color:</label>
+                        <input type="color" name="stroke-color" class="color-box" value="#ff0000">
                         <input type="submit" value="Submit">
                     </form>
-                    <form action="/action_page.php">
-                        <label for="favcolor">Select your favorite color:</label>
-                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-                        <input type="submit" value="Submit">
-                    </form>
-
-                    <form class="font-color-choice" type="color"></form>
                 </div>
             </div>
-            <div class="stickers-container">
-                <div class="sticker1 sticker">❤</div>
-                <div class="sticker2 sticker">😎</div>
-                <div class="sticker3 sticker">👍🏻</div>
-                <div class="sticker4 sticker">💩</div>
+            <div class="stickers-container flex ">
+                <div class="sticker1 sticker pointer">❤</div>
+                <div class="sticker2 sticker pointer">😎</div>
+                <div class="sticker3 sticker pointer">👍🏻</div>
+                <div class="sticker4 sticker pointer">💩</div>
             </div>
-            <div class="social-container">
+            <div class="social-container space-between flex">
                 <button class="save-btn btn" onclick="">Save</button>
                 <button class="download-btn btn" onclick="downloadCanvas(event)">Download</button>
                 <button class="share-btn btn" onclick="">Share</button>
             </div>
         </div>
     </main>
-    <footer class="footer">
+    <footer class="footer flex">
         <div class="footer-logo logo">LOGO</div>
 
-        <ul class="social-nav">
+        <ul class="social-nav space-between">
             <li>
                 <a class="facebook social" href="#">
-                    <img class="social-image" src="img/F@1X.png" alt="" />
+                    <!-- <img class="social-image" src="img/ICONS/F@1X.png" alt="" /> -->
                 </a>
             </li>
             <li>
                 <a class="twitter social" href="#">
-                    <img class="social-image" src="img/L@1X.png" alt="" />
+                    <!-- <img class="social-image" src="img/L@1X.png" alt="" /> -->
                 </a>
             </li>
             <li>
                 <a class="be social" href="#">
-                    <img class="social-image" src="img/E@1X.png" alt="" />
+                    <!-- <img class="social-image" src="img/E@1X.png" alt="" /> -->
                 </a>
             </li>
             <li>
                 <a class="dribble social" href="#">
-                    <img class="social-image" src="img/D@1X.png" alt="" />
+                    <!-- <img class="social-image" src="img/D@1X.png" alt="" /> -->
                 </a>
             </li>
         </ul>

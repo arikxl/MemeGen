@@ -36,7 +36,6 @@ button {
 .gallery-container {
     width: 75%;
     gap: 5px;
-    justify-content: space-between;
     grid-template-columns: repeat(auto-fill, 150px);
     display: grid;
     background: linear-gradient(-45deg, #7fff00, #e73c7e, white, #23a6d5, #23d5ab);
@@ -63,10 +62,10 @@ button {
 /* mmmmmmmmmmmmmmmmmm */
 
 
-.close-modal{
-    width:100px;
+.close-modal {
+    width: 100px;
     position: absolute;
-    left:0;
+    left: 0;
     background-color: #23d5ab;
 }
 
@@ -78,6 +77,7 @@ button {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    /* display: none; */
 }
 
 .canvas-container {
@@ -99,35 +99,78 @@ button {
 }
 
 .editor-container {
-    /* width: 50%; */
     background-color: darkblue;
     flex-direction: column;
-    height:500px;
-    margin:20px 40px;
+    height: 400px;
+    margin: 20px 40px;
+    max-width: 300px;
+    font-size:16px;
+}
+
+.editor-container *{
+    margin-bottom: 5px;
 }
 
 .editor-container button {
-    background: linear-gradient(60deg,white,silver ,white, silver);
+    background: linear-gradient(60deg, white, silver, white, silver);
     background-size: 400% 400%;
     animation: gradient 10s infinite;
+    max-height: 45px;
+    height: 45px;
+
 }
 
+.text-line-container {
+    max-width: 300px;
 
-.text-line{
-    font-size:1rem;
+}
+
+.text-line {
+    font-size: 16px;
+    max-width: 260px;
     direction: rtl;
-    padding:10px;
+    padding: 10px;
+    width: 80%;
+    font-family: 'Amatic SC', cursive;
+    /* font-family: 'Bellefair', serif; */
+    /* font-family: 'Heebo', sans-serif; */
+    /* font-family: 'Karantina', cursive; */
+    /* font-family: 'Miriam Libre', sans-serif; */
+    /* font-family: 'Varela Round', sans-serif; */
+
 }
 
-.text-line-btns-container{
-    background-color: #e73c7e;
-}
-.text-line-btns-container button{
+.add-txt-btn {
     width: 20%;
-    font-size:20px;
+    height: 45px;
+    font-size: 25px;
+}
+
+
+.text-line-btns-container button {
+    width: 20%;
+    font-size: 20px;
 
 }
-.text-line-btns-image{
-    width:30px;
-    padding:5px;
+
+.text-line-btns-image {
+    width: 30px;
+    padding: 5px;
+}
+
+
+.stickers-container {
+    background-color: violet;
+    font-size: 30px;
+    border-radius: 30px;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.social-container button{
+    width:33%;
+}
+
+.color-box{
+    width:100px;
 }
