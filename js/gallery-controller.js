@@ -10,12 +10,48 @@ function onInit() {
     console.log('LETS MEME!');
     gCanvas = document.querySelector('#meme-canvas');
     gCtx = gCanvas.getContext('2d');
+    renderGallery();
     // drawImg()
 }
 
-function openFilters() {
-    document.querySelector('.dropdown-content').classList.toggle('show');
+
+function onImgPick(id) {
+    gMemes.selectedImgId = id;
+    openModal();
+};
+
+
+function openModal(isSavedMeme) {
+    document.querySelector('.gallery-container').style.display = 'none';
+    document.querySelector('.search-container').style.display = 'none';
+    document.querySelector('.meme-editor-container').style.display = 'flex';
+    renderCanvas()
 }
+
+// function onSearchImg(ev) {
+//     ev.preventDefault();
+//     var chosenGalley = getFromStorage(IMG_KEY);
+//     console.log('chosenGalley:', chosenGalley)
+//     filteredGallery = searchImg(chosenGalley)
+//     console.log('filteredGallery:', filteredGallery)
+//     // setTimeout(() => {
+//     //     renderImg()
+//     // }, 500);
+// }
+
+
+
+
+
+
+
+
+// xXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+// function openFilters() {
+//     document.querySelector('.dropdown-content').classList.toggle('show');
+// }
 
 
 function clearCanvas() {
@@ -51,11 +87,7 @@ function filterMemes() {
 }
 
 
-function openModal() {
-    document.querySelector('.gallery-container').style.display = 'none';
-    document.querySelector('.search-container').style.display = 'none';
-    document.querySelector('.meme-editor-container').style.display = 'flex';
-}
+
 
 function closeModal() {
     document.querySelector('.gallery-container').style.display = 'grid';
@@ -63,7 +95,7 @@ function closeModal() {
     document.querySelector('.meme-editor-container').style.display = 'none';
 }
 
-function Onchange(value){
-console.log('value:', value)
-console.log('value:')
+function Onchange(value) {
+    console.log('value:', value)
+    console.log('value:')
 }
