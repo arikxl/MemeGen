@@ -103,7 +103,7 @@ const gMemes = [{
 var gSelectedMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
-    exportReady: false,
+    // exportReady: false,
     lines: [{
         txt: '',
         pos: {
@@ -114,7 +114,7 @@ var gSelectedMeme = {
         align: 'center',
         fontColor: 'white',
         strokeColor: 'blue',
-        isDragging: false,
+        // isDragging: false,
         font: 'Heebo, sans-serif',
     }]
 }

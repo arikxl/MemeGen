@@ -79,4 +79,6 @@ function closeModal() {
     document.querySelector('.meme-editor-container').style.display = 'none';
     gSelectedMeme.lines[0].txt = '';
     document.querySelector('.text-line').value =''
+    gSelectedMeme.lines[0].pos.x = 250;
+    gSelectedMeme.lines[0].align = 'center';
 }
