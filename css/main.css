@@ -3,6 +3,7 @@
 @import "header.css";
 @import "search&filter.css";
 @import "footer.css";
+@import "meme-editor.css";
 
 
 * {
@@ -19,8 +20,14 @@ body {
         background-position: 0% 50%;
     }
 
+    25% {
+        background-position: 50% 50%;
+    }
     50% {
         background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
     }
 
     100% {
@@ -98,79 +105,3 @@ button {
     background-color: white;
 }
 
-.editor-container {
-    background-color: darkblue;
-    flex-direction: column;
-    height: 400px;
-    margin: 20px 40px;
-    max-width: 300px;
-    font-size:16px;
-}
-
-.editor-container *{
-    margin-bottom: 5px;
-}
-
-.editor-container button {
-    background: linear-gradient(60deg, white, silver, white, silver);
-    background-size: 400% 400%;
-    animation: gradient 10s infinite;
-    max-height: 45px;
-    height: 45px;
-
-}
-
-.text-line-container {
-    max-width: 300px;
-
-}
-
-.text-line {
-    font-size: 16px;
-    max-width: 260px;
-    direction: rtl;
-    padding: 10px;
-    width: 80%;
-    font-family: 'Amatic SC', cursive;
-    /* font-family: 'Bellefair', serif; */
-    /* font-family: 'Heebo', sans-serif; */
-    /* font-family: 'Karantina', cursive; */
-    /* font-family: 'Miriam Libre', sans-serif; */
-    /* font-family: 'Varela Round', sans-serif; */
-
-}
-
-.add-txt-btn {
-    width: 20%;
-    height: 45px;
-    font-size: 25px;
-}
-
-
-.text-line-btns-container button {
-    width: 20%;
-    font-size: 20px;
-
-}
-
-.text-line-btns-image {
-    width: 30px;
-    padding: 5px;
-}
-
-
-.stickers-container {
-    background-color: violet;
-    font-size: 30px;
-    border-radius: 30px;
-    justify-content: space-around;
-    padding: 5px;
-}
-
-.social-container button{
-    width:33%;
-}
-
-.color-box{
-    width:100px;
-}

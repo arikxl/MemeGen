@@ -20,7 +20,7 @@
         <div class="nav-bar-container flex">
             <div class="head-logo logo">LOGO</div>
             <ul class="nav-bar flex clean-list space-between">
-                <li class="gallery-pointer pointer">Gallery</li>
+                <li class="gallery-pointer pointer" onclick="closeModal()">Gallery</li>
                 <li class="my-memes pointer">My Memes</li>
                 <li class="about pointer">About</li>
             </ul>
@@ -41,12 +41,12 @@
             </div>
         </div>
         <div class="search-filters flex">
-            <h1 class="filter-crazy pointer">Crazy</h3>
-                <h5 class="filter-other pointer">Other</h3>
-                    <h4 class="filter-fight pointer">Fight</h3>
-                        <h6 class="filter-stupid pointer">Stupid</h3>
-                            <h3 class="filter-sex pointer">Sex</h3>
-                            <h2 class="filter-funny pointer">Funny</h3>
+            <h1 class="filter-crazy pointer">Crazy</h1>
+            <h5 class="filter-other pointer">Other</h5>
+            <h4 class="filter-fight pointer">Fight</h4>
+            <h6 class="filter-stupid pointer">Stupid</h6>
+            <h3 class="filter-sex pointer">Sex</h3>
+            <h2 class="filter-funny pointer">Funny</h2>
         </div>
     </section>
     <section class="gallery-container margin-auto flex space-between">
@@ -95,8 +95,6 @@
                     <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
                 </button>
             </div>
-
-
             <div class="font-manipulation-container">
                 <div class="font-btns-container ">
                     <form action="" method="get" class="font-size-input space-between flex">
@@ -186,6 +184,7 @@
         </ul>
         <small class="small">2021 dskfskdjfhsjh</small>
     </footer>
+    <script src="js/meme-service.js"></script>
     <script src="js/controller.js"></script>
 </body>
 

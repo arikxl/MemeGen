@@ -13,12 +13,6 @@ function onInit() {
     // drawImg()
 }
 
-
-
-
-
-
-
 function openFilters() {
     document.querySelector('.dropdown-content').classList.toggle('show');
 }
@@ -72,5 +66,4 @@ function closeModal() {
 function Onchange(value){
 console.log('value:', value)
 console.log('value:')
-
 }
