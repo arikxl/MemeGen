@@ -107,35 +107,21 @@ const gMemes = [{
 // console.table(gMemes);
 
 
-var gMeme = {
+var gSelectedMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     exportReady: false,
     lines: [{
-            txt: 'This is my First line',
-            pos: {
-                x: (gElCanvas.width / 2),
-                y: 40
-            },
-            size: 25,
-            align: 'center',
-            color: 'red',
-            strokeColor: 'black',
-            isDragging: false,
-            font: 'Impact',
+        txt: '',
+        pos: {
+            x: (gElCanvas.width / 2),
+            y: 50
         },
-        {
-            txt: 'This is my Second line',
-            pos: {
-                x: (gElCanvas.width / 2),
-                y: (gElCanvas.height -40)
-            },
-            size: 25,
-            align: 'center',
-            color: 'red',
-            strokeColor: 'black',
-            isDragging: false,
-            font: 'Impact',
-        }
-    ]
+        size: 50,
+        align: 'center',
+        fontColor: 'white',
+        strokeColor: 'red',
+        isDragging: false,
+        font: 'Heebo, sans-serif',
+    }]
 }

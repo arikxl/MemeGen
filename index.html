@@ -55,13 +55,13 @@
     <main class="meme-editor-container margin-auto flex">
         <div class="close-modal pointer" onclick="closeModal()">X</div>
         <div class="canvas-container">
-            <canvas id="meme-canvas" width="500" height="500" onclick="draw(event)">
+            <canvas id="meme-canvas" width="500" height="500" onclick="">
             </canvas>
         </div>
         <div class="editor-container flex">
             <div class="text-line-container flex ">
-                <input class="text-line" type="text" name="add-txt" placeholder="החלק המצחיק נכנס פה" />
-                <button class="add-txt-btn" onclick="onAddTxt()">👍🏻</button>
+                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt()" placeholder="החלק המצחיק נכנס פה" />
+                <!-- <button class="add-txt-btn" onclick="onAddTxt()" >👍🏻</button> -->
             </div>
             <div class="text-line-btns-container flex">
                 <button class="move-line-up-btn btn" onclick="">⬆</button>
@@ -167,10 +167,11 @@
         </ul>
         <small class="small">2021 dskfskdjfhsjh</small>
     </footer>
-    <script src="js/gallery-service.js"></script>
-    <script src="js/meme-editor-controller.js"></script>
-    <script src="js/meme-service.js"></script>
     <script src="js/gallery-controller.js"></script>
+    <script src="js/gallery-service.js"></script>
+    <script src="js/editor-controller.js"></script>
+    <script src="js/editor-service.js"></script>
+    <script src="js/meme-service.js"></script>
     <script src="js/storage.js"></script>
 </body>
 

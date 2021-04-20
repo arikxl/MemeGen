@@ -93,6 +93,10 @@ function closeModal() {
     document.querySelector('.gallery-container').style.display = 'grid';
     document.querySelector('.search-container').style.display = 'flex';
     document.querySelector('.meme-editor-container').style.display = 'none';
+    document.querySelector('.text-line placeholder').innerText = '';
+    gSelectedMeme.lines[0].txt = '';
+    
+
 }
 
 function Onchange(value) {
