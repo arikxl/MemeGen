@@ -1,34 +1,59 @@
-
-
-
-.nav-bar-container {
+header {
     width: 100%;
     background-color: rgba(0, 0, 0, .6);
     justify-content: space-around;
-    text-align: center;
-    height: 3rem;
     border-bottom: 3px solid white;
 }
 
+
+.nav-bar-container {
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
+    height: 3rem;
+}
+
 .head-logo {
-    background-color: aqua;
     font-size: 3rem;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+    color: #09f;
+}
+
+.head-logo:hover {
+    color: #6c3;
+    text-shadow: 0px 0px 30px #09f;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .nav-bar {
     flex-direction: row;
     font-size: 1.5rem;
-    width: 40%;
+    width: 50%;
     margin: 0;
 }
 
 .nav-bar li {
     background-color: rgba(255, 255, 255, .6);
-    width: 33%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar li:first-child {
+    border-radius: 50px 0 0 0px;
 }
 
 .nav-bar li:hover {
     background-color: white;
-    color: black;
-    box-shadow: -3px -3px 3px 3px lightseagreen;
+    color: #6c3;
+    box-shadow: -3px -3px 3px 3px #09f;
+}
+
+.nav-bar li:not(first-child) {
+border-left: 1px solid gray;
 }

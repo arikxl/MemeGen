@@ -1,9 +1,10 @@
-@import "fonts.css";
 @import "helpers.css";
 @import "header.css";
 @import "search&filter.css";
 @import "footer.css";
 @import "meme-editor.css";
+@import "background.css";
+@import "fonts.css";
 
 
 * {
@@ -11,9 +12,9 @@
 }
 
 body {
-    background-color: 'lightgreen';
-    color: white;
     user-select: none;
+    color:white;
+    font-family: 'RocknRoll One', sans-serif; 
 }
 
 @keyframes gradient {
@@ -46,7 +47,8 @@ button {
     font-size:5rem;
     position: absolute;
     left: 0;
-    color:black;
+    color:white;
+    display: none;
 }
 
 .gallery-container {
@@ -54,12 +56,12 @@ button {
     gap: 5px;
     grid-template-columns: repeat(auto-fill, 150px);
     display: grid;
-    background: linear-gradient(-45deg, #7fff00, #e73c7e, white, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg,white,white, grey, silver);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     padding: 5px;
     border-radius: 10px;
-    /* display: none; */
+    margin-bottom: 15px;
 }
 
 .meme-img {
@@ -68,34 +70,18 @@ button {
     background-color: white;
     border: 3px solid white;
     border-radius: 10px;
-
 }
 .meme-img :hover {
     border: 3px solid white;
 }
-
 
 .img-card {
     width: 100%;
     border-radius: 10px;
 }
 
-
-
-
-/* mmmmmmmmmmmmmmmmmm */
-
-
-.meme-editor-container {
-    background-color: pink;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    display: none;
-}
-
 .canvas-container {
-    width: 550px;
+    width: 60%;
     margin: 0;
     background: linear-gradient(-45deg, #7fff00, #ee7752, #e73c7e, white, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -106,8 +92,7 @@ button {
 
 #meme-canvas {
     margin: 20px auto;
-    border: 1px solid white;
+    border: 1px solid;
     display: block;
     border-radius: 20px;
-    background-color: white;
 }

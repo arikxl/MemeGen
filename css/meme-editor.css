@@ -1,18 +1,40 @@
-.editor-container {
-    background-color: darkblue;
-    flex-direction: column;
-    height: 400px;
-    margin: 20px 40px;
-    max-width: 300px;
-    font-size: 16px;
+.meme-editor-container {
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
+    display: none;
+    align-items: center;
+    color: grey;
 }
 
-.editor-container * {
+.control-panel-container {
+    width: 38%;
+    background: linear-gradient(85deg, #7fff00, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    justify-content: space-around;
+    align-content: center;
+    padding: 15px 0;
+    border-radius: 20px;
+}
+
+.editor-container {
+    background-color: rgba(255, 255, 255, .8);
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.editor-container :not(last-child) {
     margin-bottom: 5px;
 }
 
 .editor-container button {
-    background: linear-gradient(60deg, white, silver, white, silver);
+    background: linear-gradient(120deg, white, silver, white, silver);
     background-size: 400% 400%;
     animation: gradient 10s infinite;
     max-height: 45px;
@@ -20,16 +42,21 @@
 
 }
 
-.text-line-container {
+/* .text-line-container {
     max-width: 300px;
 
-}
+} */
 
 .text-line {
     font-size: 16px;
     direction: rtl;
     padding: 10px;
     width: 100%;
+    direction: rtl;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    outline: none;
+
 }
 
 
@@ -53,13 +80,16 @@
 
 
 .stickers-container {
-    background-color: violet;
-    font-size: 30px;
-    border-radius: 30px;
+    background: linear-gradient(200deg, white, silver, white, silver);
+    background-size: 400% 400%;
+    animation: gradient 10s infinite;
+    font-size: 2rem;
+    color: red;
+    border-radius: 20px;
     justify-content: space-around;
     padding: 5px;
-    margin-bottom: 10px;
 }
+
 
 .social-container {
     width: 100%;

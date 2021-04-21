@@ -25,6 +25,7 @@ function drawText() {
     gCtx.font = `${currLine.size}px ${currLine.font}`;
     gCtx.textAlign = `${currLine.align}`;
     gCtx.textBaseline = 'middle';
+    gCtx.direction = 'rtl',
     gCtx.fillText(currLine.txt, currLine.pos.x, currLine.pos.y);
     gCtx.strokeText(currLine.txt, currLine.pos.x, currLine.pos.y);
 }
@@ -100,7 +101,6 @@ function shareToFacebook(elForm, ev) {
 };
 
 function doUploadImg(elForm, onSuccess) {
-    ev.preventDefault();
     var formData = new FormData(elForm);
     fetch('http://ca-upload.com/here/upload.php', {
             method: 'POST',

@@ -5,173 +5,168 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/mic.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/original-img/mic.png">
     <link rel="stylesheet" href="css/main.css">
-    <title>StandUpMemeGen</title>
+    <title>Arik's MemeShow</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Bangers&family=Montserrat:wght@300&family=Original+Surfer&family=RocknRoll+One&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bellefair&family=Heebo:wght@200&family=Karantina:wght@700&family=Miriam+Libre&family=Varela+Round&display=swap"
         rel="stylesheet">
 </head>
 
 <body class="margin-auto" onload="onInit()">
-
     <header>
-        <div class="nav-bar-container flex">
-            <div class="head-logo logo">LOGO</div>
+        <div class="nav-bar-container flex space-between">
+            <div class="head-logo logo">The Meme Show</div>
             <ul class="nav-bar flex clean-list space-between">
-                <li class="gallery-pointer pointer" onclick="closeModal()">Gallery</li>
-                <li class="my-memes pointer">My Memes</li>
-                <li class="about pointer">About</li>
+                <li class="gallery-pointer flex pointer" onclick="closeModal()">Gallery</li>
+                <li class="my-memes flex pointer">My Memes</li>
+                <li class="about flex pointer">About</li>
             </ul>
         </div>
     </header>
+
+
     <section class="search-container margin-auto flex">
-        <div class="search-word-dropdown dropdown">
+        <div class="search-word-dropdown dropdown flex">
             <label for="search type" class="filter-input"></label>
-            <form onkeyup="onSearchImg(event)">
+            <form onkeyup="onSearchImg(this)">
                 <input list="category" autocomplete="off" placeholder="Click to Search..." name="search-term" />
-                <datalist id="category">
-                </datalist>
+                <datalist id="category"></datalist>
             </form>
-            <!-- <a href="#stupid">Stupid</a>
-                <a href="#crazy">Crazy</a>
-                <a href="#fight">Fight</a>
-                <a href="#sex">Sex</a>
-                <a href="#funny">Funny</a>
-                <a href="#other">Other</a> -->
-        </div>
-        <div class="search-filters flex">
-            <h1 class="filter-crazy pointer">Crazy</h1>
-            <h5 class="filter-other pointer">Other</h5>
-            <h4 class="filter-fight pointer">Fight</h4>
-            <h6 class="filter-stupid pointer">Stupid</h6>
-            <h3 class="filter-sex pointer">Sex</h3>
-            <h2 class="filter-funny pointer">Funny</h2>
+            <ul class="search-filters flex clean-list ">
+                <li class="filter-crazy pointer">Crazy</li>
+                <li class="filter-other pointer">Other</li>
+                <li class="filter-fight pointer">Fight</li>
+                <li class="filter-stupid pointer">Stupid</li>
+                <li class="filter-sex pointer">Sex</li>
+                <li class="filter-funny pointer">Funny</li>
+            </ul>
         </div>
     </section>
-    <section class="gallery-container margin-auto flex space-between">
-    </section>
+
+    <section class="gallery-container margin-auto flex space-between"></section>
+    <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
     <main class="meme-editor-container margin-auto flex">
-        <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
         <div class="canvas-container">
             <canvas id="meme-canvas" width="500" height="500" onclick="">
             </canvas>
         </div>
-        <div class="editor-container flex">
-            <div class="text-line-container flex ">
-                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt(this)"
-                    placeholder="החלק המצחיק נכנס פה" />
-            </div>
-            <div class="text-line-btns-container flex">
-                <button class="move-line-up-btn btn" onclick="onMoveLine('up')">⬆</button>
-                <button class="move-line-down-btn btn" onclick="onMoveLine('down')">⬇</button>
-                <button class="switch-text-line-btn btn" onclick="">
-                    <img class="text-line-btns-image"
-                        src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" />
-                </button>
-                <button class="add-text-line-btn btn" onclick="onAddLine()">
-                    <img class="text-line-btns-image" src="img/ICONS/add.png" alt="" />
-                </button>
-                <button class="delete-text-line-btn btn" onclick="clearCanvas()">
-                    <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
-                </button>
-            </div>
-            <div class="font-manipulation-container">
-                <div class="font-btns-container ">
-                    <form action="" method="get" class="font-size-input space-between flex">
-                        <label for="vol">Font Size:</label>
-                        <input type="range" name="font-size-input" min="10" max="80" value="30"
-                            class="pointer font-size-bar" onchange="chooseFontSize(this)">
-                    </form>
-                    <div class="font-direction-input flex space-between">
-                        <form action="" method="get" >
-                            <label for="vol">Align: Left</label>
-                            <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
-                            onchange="chooseTextAlign(this)">
-                            <label for="vol">Right</label>
+
+        <div class="control-panel-container flex">
+            <div class="editor-container flex">
+                <div class="text-line-container flex ">
+                    <input class="text-line" type="text" name="add-txt" oninput="onAddTxt(this)"
+                        placeholder="החלק המצחיק נכנס פה..." />
+                </div>
+                <div class="text-line-btns-container flex">
+                    <button class="move-line-up-btn btn" onclick="onMoveLine('up')">⬆</button>
+                    <button class="move-line-down-btn btn" onclick="onMoveLine('down')">⬇</button>
+                    <button class="switch-text-line-btn btn" onclick="">
+                        <img class="text-line-btns-image"
+                            src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" />
+                    </button>
+                    <button class="add-text-line-btn btn" onclick="onAddLine()">
+                        <img class="text-line-btns-image" src="img/ICONS/add.png" alt="" />
+                    </button>
+                    <button class="delete-text-line-btn btn" onclick="clearCanvas()">
+                        <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
+                    </button>
+                </div>
+                <div class="font-manipulation-container">
+                    <div class="font-btns-container ">
+                        <form action="" method="get" class="font-size-input space-between flex">
+                            <label for="vol">Font Size:</label>
+                            <input type="range" name="font-size-input" min="10" max="80" value="30"
+                                class="pointer font-size-bar" onchange="chooseFontSize(this)">
+                        </form>
+                        <div class="font-direction-input flex space-between">
+                            <form action="" method="get">
+                                <label for="vol">Align: Left</label>
+                                <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
+                                    onchange="chooseTextAlign(this)">
+                                <label for="vol">Right</label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="font-forms-container ">
+                        <div class="font-choice space-between flex">
+                            <label for="fonts">Font:</label>
+                            <select name="fonts" class="font-choice space-between flex" onchange="chooseFont(this)">
+                                <option value="Heebo">Heebo, sans-serif</option>
+                                <option value="Miriam Libre">Miriam Libre', sans-serif</option>
+                                <option value="Varela Round">Varela Round', sans-serif</option>
+                                <option value="Amatic SC">Amatic SC, cursive</option>
+                                <option value="Karantina">Karantina, cursive</option>
+                                <option value="Bellefair">Bellefair, serif</option>
+                            </select>
+                        </div>
+                        <form action="" class="font-color-choice flex space-between">
+                            <label for="font-color">Font Color:</label>
+                            <input type="color" name="font-color" class="color-box" onchange="chooseFontColor(this)"
+                                value="#ffffff">
+                        </form>
+                        <form action="" class="stroke-color-choice flex space-between">
+                            <label for="stroke-color">Stroke Color:</label>
+                            <input type="color" name="stroke-color" class="color-box" value="#000000"
+                                onchange="chooseStrokeColor(this)">
                         </form>
                     </div>
                 </div>
-                <div class="font-forms-container ">
-                    <div class="font-choice space-between flex">
-                        <label for="fonts">Font:</label>
-                        <select name="fonts" class="font-choice space-between flex" onchange="chooseFont(this)">
-                            <option value="Heebo">Heebo, sans-serif</option>
-                            <option value="Miriam Libre">Miriam Libre', sans-serif</option>
-                            <option value="Varela Round">Varela Round', sans-serif</option>
-                            <option value="Amatic SC">Amatic SC, cursive</option>
-                            <option value="Karantina">Karantina, cursive</option>
-                            <option value="Bellefair">Bellefair, serif</option>
-                        </select >
-                    </div>
-                    <form action="" class="font-color-choice flex space-between">
-                        <label for="font-color">Font Color:</label>
-                        <input type="color" name="font-color" class="color-box"
-                        onchange="chooseFontColor(this)" value="#ffffff">
-                    </form>
-                    <form action="" class="stroke-color-choice flex space-between">
-                        <label for="stroke-color">Stroke Color:</label>
-                        <input type="color" name="stroke-color" class="color-box"
-                         value="#000000" onchange="chooseStrokeColor(this)">
-                    </form>
+                <div class="stickers-container flex ">
+                    <div class="sticker1 sticker pointer">❤</div>
+                    <div class="sticker2 sticker pointer">😎</div>
+                    <div class="sticker3 sticker pointer">👍🏻</div>
+                    <div class="sticker4 sticker pointer">💩</div>
                 </div>
-            </div>
-            <div class="stickers-container flex ">
-                <div class="sticker1 sticker pointer">❤</div>
-                <div class="sticker2 sticker pointer">😎</div>
-                <div class="sticker3 sticker pointer">👍🏻</div>
-                <div class="sticker4 sticker pointer">💩</div>
-            </div>
-            <div class="social-container space-between flex">
-                <button class="save-btn btn" onclick="saveMeme(this)">Save</button>
-                <button>
-                    <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
-                </button>
+                <div class="social-container space-between flex">
+                    <button class="save-btn btn" onclick="saveMeme(this)">Save</button>
+                    <button>
+                        <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
+                    </button>
 
-                <div class="share-container btn">
-                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="shareToFacebook(this, event)">
-                        <input name="img" id="imgData" type="hidden" />
-                        <button class="share-btn btn" type="submit">Share</button>
-                    </form>
+                    <div class="share-container btn">
+                        <form action="" method="POST" enctype="multipart/form-data"
+                            onsubmit="shareToFacebook(this, event)">
+                            <input name="img" id="imgData" type="hidden" />
+                            <button class="share-btn btn" type="submit">Share</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+
+
+
     <footer class="footer flex">
-        <div class="footer-logo logo">LOGO</div>
 
         <ul class="social-nav space-between">
             <li>
                 <a class="facebook social" href="#">
-                    <!-- <img class="social-image" src="img/ICONS/F@1X.png" alt="" /> -->
+                    <img class="social-image" src="img/ICONS/facebook-new.png" alt="" />
                 </a>
             </li>
             <li>
-                <a class="twitter social" href="#">
-                    <!-- <img class="social-image" src="img/L@1X.png" alt="" /> -->
+                <a class="git social" href="#">
+                    <img class="social-image" src="img/ICONS/github-new.png" alt="" />
                 </a>
             </li>
             <li>
-                <a class="be social" href="#">
-                    <!-- <img class="social-image" src="img/E@1X.png" alt="" /> -->
-                </a>
-            </li>
-            <li>
-                <a class="dribble social" href="#">
-                    <!-- <img class="social-image" src="img/D@1X.png" alt="" /> -->
+                <a class="telegram social" href="#">
+                    <img class="social-image" src="img/ICONS/telegram-new.png" alt="" />
                 </a>
             </li>
         </ul>
-
-
-        <ul class="social-icons">
-            <li class="facebook">F</li>
-            <li class="github">G</li>
-            <li class="telegram">T</li>
-        </ul>
-        <small class="small">2021 dskfskdjfhsjh</small>
+        <small class="small">2021 Arik Alexandrov - CA</small>
     </footer>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     <script src="js/gallery-controller.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/editor-controller.js"></script>

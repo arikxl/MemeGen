@@ -16,8 +16,8 @@ function onImgPick(id) {
     openModal();
 };
 
-
 function openModal() {
+    document.querySelector('.close-modal').style.display = 'block';
     document.querySelector('.gallery-container').style.display = 'none';
     document.querySelector('.search-container').style.display = 'none';
     document.querySelector('.meme-editor-container').style.display = 'flex';
@@ -76,9 +76,10 @@ function filterMemes() {
 function closeModal() {
     document.querySelector('.gallery-container').style.display = 'grid';
     document.querySelector('.search-container').style.display = 'flex';
+    document.querySelector('.close-modal').style.display = 'none';
     document.querySelector('.meme-editor-container').style.display = 'none';
     gSelectedMeme.lines[0].txt = '';
-    document.querySelector('.text-line').value =''
+    document.querySelector('.text-line').value = ''
     gSelectedMeme.lines[0].pos.x = 250;
     gSelectedMeme.lines[0].align = 'center';
 }
