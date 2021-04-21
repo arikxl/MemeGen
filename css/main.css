@@ -56,7 +56,7 @@ button {
     gap: 5px;
     grid-template-columns: repeat(auto-fill, 150px);
     display: grid;
-    background: linear-gradient(-45deg,white,white, grey, silver);
+    background: linear-gradient(145deg,white,white, grey, silver);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     padding: 5px;
@@ -95,4 +95,14 @@ button {
     border: 1px solid;
     display: block;
     border-radius: 20px;
+    width: 100%;
+}
+
+
+@media (max-width: 880px) {
+    .gallery-container{
+        justify-content:space-around;
+        justify-content:space-around;
+    }
+
 }

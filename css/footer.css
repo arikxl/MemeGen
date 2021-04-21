@@ -4,6 +4,8 @@ footer {
   flex-direction: column;
   text-align: center;
   border-radius: 90px 90px 0 0;
+
+  width: 100%;
 }
 
 
@@ -35,4 +37,19 @@ footer {
 .social-image {
   width: 100%;
   display: flex;
+}
+
+
+
+@media (max-width: 880px) {
+ footer {
+
+ }
+
+ .social-nav {
+  width: 50%;
+ 
+}
+
+
 }

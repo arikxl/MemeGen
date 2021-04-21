@@ -19,6 +19,8 @@
 
 <body class="margin-auto" onload="onInit()">
     <header>
+        <button class="toggle-menu-btn btn hidden" onclick="openHeaderMenu()">&#9776;</button>
+
         <div class="nav-bar-container flex space-between">
             <div class="head-logo logo">The Meme Show</div>
             <ul class="nav-bar flex clean-list space-between">
@@ -27,23 +29,24 @@
                 <li class="about flex pointer">About</li>
             </ul>
         </div>
+
     </header>
 
 
     <section class="search-container margin-auto flex">
         <div class="search-word-dropdown dropdown flex">
-            <label for="search type" class="filter-input"></label>
+            <label for="search" class="filter-input"></label>
             <form onkeyup="onSearchImg(this)">
-                <input list="category" autocomplete="off" placeholder="Click to Search..." name="search-term" />
+                <input list="category" autocomplete="off" placeholder="Click to Search..."/>
                 <datalist id="category"></datalist>
             </form>
             <ul class="search-filters flex clean-list ">
-                <li class="filter-crazy pointer">Crazy</li>
-                <li class="filter-other pointer">Other</li>
-                <li class="filter-fight pointer">Fight</li>
-                <li class="filter-stupid pointer">Stupid</li>
-                <li class="filter-sex pointer">Sex</li>
-                <li class="filter-funny pointer">Funny</li>
+                <li class="filter-crazy filter pointer">Crazy</li>
+                <li class="filter-other filter pointer">Other</li>
+                <li class="filter-fight filter pointer">Fight</li>
+                <li class="filter-stupid filter pointer">Stupid</li>
+                <li class="filter-sex filter pointer">Sex</li>
+                <li class="filter-funny filter pointer">Funny</li>
             </ul>
         </div>
     </section>
@@ -127,8 +130,7 @@
                     <button>
                         <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
                     </button>
-
-                    <div class="share-container btn">
+                    <div class="share-container btn flex">
                         <form action="" method="POST" enctype="multipart/form-data"
                             onsubmit="shareToFacebook(this, event)">
                             <input name="img" id="imgData" type="hidden" />
@@ -167,6 +169,7 @@
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
+    <script src="js/responsive-utils.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/editor-controller.js"></script>
