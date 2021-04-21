@@ -113,7 +113,7 @@ var gSelectedMeme = {
         size: 40,
         align: 'center',
         fontColor: 'white',
-        strokeColor: 'blue',
+        strokeColor: 'black',
         // isDragging: false,
         font: 'Heebo, sans-serif',
     }]

@@ -42,6 +42,12 @@ button {
     cursor: pointer;
 }
 
+.close-modal{
+    font-size:5rem;
+    position: absolute;
+    left: 0;
+    color:black;
+}
 
 .gallery-container {
     width: 75%;
@@ -78,16 +84,6 @@ button {
 
 
 /* mmmmmmmmmmmmmmmmmm */
-
-
-.close-modal {
-    width: 100px;
-    position: absolute;
-    left: 0;
-    background-color: #23d5ab;
-}
-
-
 
 
 .meme-editor-container {

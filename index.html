@@ -53,26 +53,25 @@
     <section class="gallery-container margin-auto flex space-between">
     </section>
     <main class="meme-editor-container margin-auto flex">
-        <div class="close-modal pointer" onclick="closeModal()">X</div>
+        <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
         <div class="canvas-container">
             <canvas id="meme-canvas" width="500" height="500" onclick="">
             </canvas>
         </div>
         <div class="editor-container flex">
             <div class="text-line-container flex ">
-                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt()"
+                <input class="text-line" type="text" name="add-txt" oninput="onAddTxt(this)"
                     placeholder="החלק המצחיק נכנס פה" />
             </div>
             <div class="text-line-btns-container flex">
-                <button class="move-line-up-btn btn" onclick="">⬆</button>
-                <button class="move-line-down-btn btn" onclick="">⬇</button>
+                <button class="move-line-up-btn btn" onclick="onMoveLine('up')">⬆</button>
+                <button class="move-line-down-btn btn" onclick="onMoveLine('down')">⬇</button>
                 <button class="switch-text-line-btn btn" onclick="">
                     <img class="text-line-btns-image"
                         src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" />
                 </button>
-                <button class="add-text-line-btn btn" onclick="">
+                <button class="add-text-line-btn btn" onclick="onAddLine()">
                     <img class="text-line-btns-image" src="img/ICONS/add.png" alt="" />
-
                 </button>
                 <button class="delete-text-line-btn btn" onclick="clearCanvas()">
                     <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
@@ -85,24 +84,27 @@
                         <input type="range" name="font-size-input" min="10" max="80" value="30"
                             class="pointer font-size-bar" onchange="chooseFontSize(this)">
                     </form>
-                    <form action="" method="get" class="font-direction-input flex space-between">
-                        <label for="vol">Align Left</label>
-                        <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
-                            onchange="chooseTextAlign(this)"><span>Align Right</span></input>
-                    </form>
+                    <div class="font-direction-input flex space-between">
+                        <form action="" method="get" >
+                            <label for="vol">Align: Left</label>
+                            <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
+                            onchange="chooseTextAlign(this)">
+                            <label for="vol">Right</label>
+                        </form>
+                    </div>
                 </div>
-
-
                 <div class="font-forms-container ">
+                    <div class="font-choice space-between flex">
                         <label for="fonts">Font:</label>
                         <select name="fonts" class="font-choice space-between flex" onchange="chooseFont(this)">
-                            <option value="Heebo">Heebo</option>
-                            <option value="Amatic SC">Amatic SC</option>
-                            <option value="Bellefair">Bellefair</option>
-                            <option value="Karantina">Karantina</option>
-                            <option value="Miriam Libre">Miriam Libre</option>
-                            <option value="Varela Round">Varela Round</option>
+                            <option value="Heebo">Heebo, sans-serif</option>
+                            <option value="Miriam Libre">Miriam Libre', sans-serif</option>
+                            <option value="Varela Round">Varela Round', sans-serif</option>
+                            <option value="Amatic SC">Amatic SC, cursive</option>
+                            <option value="Karantina">Karantina, cursive</option>
+                            <option value="Bellefair">Bellefair, serif</option>
                         </select >
+                    </div>
                     <form action="" class="font-color-choice flex space-between">
                         <label for="font-color">Font Color:</label>
                         <input type="color" name="font-color" class="color-box"
@@ -122,7 +124,7 @@
                 <div class="sticker4 sticker pointer">💩</div>
             </div>
             <div class="social-container space-between flex">
-                <button class="save-btn btn" onclick="">Save</button>
+                <button class="save-btn btn" onclick="saveMeme(this)">Save</button>
                 <button>
                     <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
                 </button>

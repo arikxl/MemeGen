@@ -7,6 +7,7 @@ function renderCanvas() {
     var img = new Image();
     img.src = `./img/img-square/${gMemes.selectedImgId}.jpg`;
     gSelectedMeme.selectedImgId = gMemes.selectedImgId;
+    // gMemes.selectedImgId = gSelectedMeme.selectedImgId
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         gSelectedMeme.lines.forEach((idx) => {
@@ -28,10 +29,25 @@ function drawText() {
     gCtx.strokeText(currLine.txt, currLine.pos.x, currLine.pos.y);
 }
 
-function onAddTxt() {
-    gSelectedMeme.lines[0].txt = document.querySelector('.text-line').value;
-    renderCanvas();
+function onAddTxt(text) {
+    changeMemeProp('txt', text.value)
 }
+
+function onAddLine() {
+    addTextLine()
+    renderCanvas()
+}
+
+
+function onMoveLine(val) {
+    var textLine = gSelectedMeme.lines[0]
+    var linHeight = textLine.pos.y
+    if (val === 'up') textLine.pos.y = linHeight - 5
+    else textLine.pos.y = linHeight + 5
+    renderCanvas()
+}
+
+
 
 function clearCanvas() {
     gSelectedMeme.lines[0].txt = '';
@@ -40,7 +56,7 @@ function clearCanvas() {
 }
 
 function chooseFontSize(fontSize) {
-    gSelectedMeme.lines[0].size = +fontSize.value;
+    changeMemeProp('size', +fontSize.value)
 };
 
 function chooseTextAlign(align) {
@@ -57,14 +73,15 @@ function chooseTextAlign(align) {
         gSelectedMeme.lines[0].pos.x = 450;
         gSelectedMeme.lines[0].align = 'end';
     };
+    renderCanvas()
 };
 
 function chooseFont(font) {
-    console.log('font.value:', font.value);
+    changeMemeProp('strokeColor', font.value)
 }
 
 function chooseFontColor(color) {
-    gSelectedMeme.lines[0].fontColor = color.value;
+    changeMemeProp('fontColor', color.value)
 }
 
 function chooseStrokeColor(color) {
@@ -79,29 +96,34 @@ function downloadCanvas(elLink) {
 function shareToFacebook(elForm, ev) {
     ev.preventDefault();
     document.querySelector('#imgData').value = gCanvas.toDataURL("image/jpeg");
-
-    function onSuccess(uploadedImgUrl) {
-        uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
-        document.querySelector('.share-btn').innerHTML = `
-        <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
-         title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
-          return false;">Facebook   
-        </a>`;
-    }
     doUploadImg(elForm, onSuccess);
 };
 
 function doUploadImg(elForm, onSuccess) {
+    ev.preventDefault();
     var formData = new FormData(elForm);
     fetch('http://ca-upload.com/here/upload.php', {
             method: 'POST',
             body: formData
-        });
+        })
         .then(function (res) {
             return res.text();
-        });
-        .then(onSuccess);
+        })
+        .then(onSuccess)
         .catch(function (err) {
             console.error(err);
         });
 };
+
+
+function saveMeme() {
+    const memeUrl = (gElCanvas.toDataURL());
+    gMyMemes.push({
+        img: memeUrl,
+        imgId: gMyMemesId++,
+        lines: [...gSelectedMeme.lines]
+    });
+    console.table(gMyMemes)
+    saveToStorage('My MEMES', gMyMemes);
+
+}
