@@ -14,7 +14,20 @@ function renderCanvas() {
             drawText(idx);
         });
     };
+    renderStickers();
 };
+
+
+function renderStickers() {
+    let elStickersPanel = document.querySelector('.stickers-container');
+    let strHTML = ``;
+    gStickers.forEach(sticker => {
+        strHTML += `<div class="sticker pointer"
+         onclick="drawSticker(this)">${sticker}</div>`
+    });
+    elStickersPanel.innerHTML = strHTML
+}
+
 
 
 function drawText() {
@@ -26,7 +39,7 @@ function drawText() {
     gCtx.textAlign = `${currLine.align}`;
     gCtx.textBaseline = 'middle';
     gCtx.direction = 'rtl',
-    gCtx.fillText(currLine.txt, currLine.pos.x, currLine.pos.y);
+        gCtx.fillText(currLine.txt, currLine.pos.x, currLine.pos.y);
     gCtx.strokeText(currLine.txt, currLine.pos.x, currLine.pos.y);
 }
 
@@ -58,6 +71,7 @@ function clearCanvas() {
 
 function chooseFontSize(fontSize) {
     changeMemeProp('size', +fontSize.value)
+    document.querySelector('.font-size-input span').innerText = +fontSize.value;
 };
 
 function chooseTextAlign(align) {
@@ -89,6 +103,12 @@ function chooseStrokeColor(color) {
     gSelectedMeme.lines[0].strokeColor = color.value;
 }
 
+function drawSticker(sticker) {
+    // sticker.style.color = gSelectedMeme.lines[0].fontColor;
+    console.log(sticker.innerText);
+}
+
+
 function downloadCanvas(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'Arik-meme.jpg';
@@ -98,6 +118,17 @@ function shareToFacebook(elForm, ev) {
     ev.preventDefault();
     document.querySelector('#imgData').value = gCanvas.toDataURL("image/jpeg");
     doUploadImg(elForm, onSuccess);
+
+    function onSuccess(uploadedImgUrl) {
+        var elShareBtn = document.querySelector('.share-btn');
+        uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
+        // elShareBtn.style.width = '100%';
+        elShareBtn.innerHTML = `
+            <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
+             title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
+              return false;">Click again to share on Facebook   
+            </a>`;
+    };
 };
 
 function doUploadImg(elForm, onSuccess) {
@@ -113,6 +144,7 @@ function doUploadImg(elForm, onSuccess) {
         .catch(function (err) {
             console.error(err);
         });
+
 };
 
 

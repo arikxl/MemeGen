@@ -41,8 +41,6 @@ footer {
 
 
 @media (max-width: 880px) {
-  /* footer {} */
-
   .social-nav {
     width: 50%;
 
@@ -51,6 +49,6 @@ footer {
 }
 
 .empty-div {
-  background-color: red;
+  background-color: transparent;
   height: 47vh;
 }

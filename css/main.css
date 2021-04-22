@@ -39,9 +39,7 @@ body {
     }
 }
 
-button {
-    cursor: pointer;
-}
+
 
 .close-modal {
     font-size: 5rem;
@@ -54,7 +52,7 @@ button {
 .gallery-container {
     width: 75%;
     gap: 5px;
-    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fill, 175px);
     display: grid;
     background: linear-gradient(145deg, white, white, grey, silver);
     background-size: 400% 400%;
@@ -65,8 +63,8 @@ button {
 }
 
 .meme-img {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     background-color: white;
     border: 3px solid white;
     border-radius: 10px;
@@ -84,7 +82,7 @@ button {
 .canvas-container {
     width: 60%;
     margin: 0;
-    background: linear-gradient(-45deg, #7fff00, #ee7752, #e73c7e, white, #23a6d5, #23d5ab);
+    background: linear-gradient(-145deg, white, white, grey, silver);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     padding: 5px;
@@ -92,11 +90,11 @@ button {
 }
 
 #meme-canvas {
-    margin: 20px auto;
     border: 1px solid;
     display: block;
     border-radius: 20px;
     width: 100%;
+    
 }
 
 

@@ -20,7 +20,6 @@
 <body class="margin-auto" onload="onInit()">
     <header>
         <button class="toggle-menu-btn btn hidden" onclick="openHeaderMenu()">&#9776;</button>
-
         <div class="nav-bar-container flex space-between">
             <div class="head-logo logo">The Meme Show</div>
             <ul class="nav-bar flex clean-list space-between">
@@ -29,7 +28,7 @@
                 <li class="about flex pointer">About</li>
             </ul>
         </div>
-
+        <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
     </header>
 
 
@@ -37,7 +36,7 @@
         <div class="search-word-dropdown dropdown flex">
             <label for="search" class="filter-input"></label>
             <form onkeyup="onSearchImg(this)">
-                <input list="category" autocomplete="off" placeholder="Click to Search..."/>
+                <input list="category" autocomplete="off" placeholder="  Click to Search..." />
                 <datalist id="category"></datalist>
             </form>
             <ul class="search-filters flex clean-list ">
@@ -51,8 +50,8 @@
         </div>
     </section>
 
+
     <section class="gallery-container margin-auto flex space-between"></section>
-    <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
     <main class="meme-editor-container margin-auto flex">
         <div class="canvas-container">
             <canvas id="meme-canvas" width="500" height="500" onclick="">
@@ -62,7 +61,7 @@
         <div class="control-panel-container flex">
             <div class="editor-container flex">
                 <div class="text-line-container flex ">
-                    <input class="text-line" type="text" name="add-txt" oninput="onAddTxt(this)"
+                    <input class="text-line full-width" type="text" name="add-txt" oninput="onAddTxt(this)"
                         placeholder="החלק המצחיק נכנס פה..." />
                 </div>
                 <div class="text-line-btns-container flex">
@@ -82,17 +81,17 @@
                 <div class="font-manipulation-container">
                     <div class="font-btns-container ">
                         <form action="" method="get" class="font-size-input space-between flex">
-                            <label for="vol">Font Size:</label>
-                            <input type="range" name="font-size-input" min="10" max="80" value="30"
-                                class="pointer font-size-bar" onchange="chooseFontSize(this)">
+                            <label for="vol">Font Size: <span>40</span></label>
+                            <input type="range" name="font-size-input" min="20" max="80" value="40"
+                                class="pointer font-size-bar" oninput="chooseFontSize(this)">
                         </form>
                         <div class="font-direction-input flex space-between">
-                            <form action="" method="get">
-                                <label for="vol">Align: Left</label>
-                                <input type="range" name="vol" min="1" max="3" class="font-direction-bar pointer"
-                                    onchange="chooseTextAlign(this)">
-                                <label for="vol">Right</label>
+                            <p class="flex">Left</p>
+                            <form action="" method="get" class="flex space-between">
+                                <input type="range" name="vol" min="1" max="3" class="font-direction-bar flex pointer"
+                                    oninput="chooseTextAlign(this)">
                             </form>
+                            <p class="flex">Right</p>
                         </div>
                     </div>
                     <div class="font-forms-container ">
@@ -119,25 +118,19 @@
                         </form>
                     </div>
                 </div>
-                <div class="stickers-container flex ">
-                    <div class="sticker1 sticker pointer">❤</div>
-                    <div class="sticker2 sticker pointer">😎</div>
-                    <div class="sticker3 sticker pointer">👍🏻</div>
-                    <div class="sticker4 sticker pointer">💩</div>
-                </div>
+                <div class="stickers-container flex"></div>
                 <div class="social-container space-between flex">
                     <button class="save-btn btn" onclick="saveMeme(this)">Save</button>
                     <button>
                         <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
                     </button>
-                    <div class="share-container btn flex">
-                        <form action="" method="POST" enctype="multipart/form-data"
-                            onsubmit="shareToFacebook(this, event)">
-                            <input name="img" id="imgData" type="hidden" />
-                            <button class="share-btn btn" type="submit">Share</button>
-                        </form>
-                    </div>
                 </div>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="shareToFacebook(this, event)">
+                    <div class="share-container btn flex" type="submit">
+                        <button class="share-btn btn" type="submit">Share</button>
+                        <input name="img" id="imgData" type="hidden" />
+                    </div>
+                </form>
             </div>
         </div>
     </main>

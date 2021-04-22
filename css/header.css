@@ -49,9 +49,8 @@ header {
 }
 
 .nav-bar li:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255);
     color: #6c3;
-    box-shadow: -3px -3px 3px 3px #09f;
 }
 
 .nav-bar li:not(first-child) {
@@ -74,6 +73,7 @@ border-left: 1px solid gray;
     width: 2em;
     border: none;
     display: none;
+    height:3rem;
 }
 
 .toggle-menu-btn, .nav-btns {
@@ -111,6 +111,7 @@ border-left: 1px solid gray;
     .head-logo {
         font-size: 2rem;
         width: 100%;
+        margin-top: 10px;
     }
 }
 

@@ -1,11 +1,13 @@
 'use strict';
 
 
+var gStickers = ['❤', '😎', '👍🏻', '💩'];
+
 function initCanvas() {
     gCtx = gElCanvas.getContext('2d');
-    console.log('gCtx:', gCtx);
     renderCanvas();
 }
+
 
 function addTextLine() {
     if (gSelectedMeme.lines.length > 2) return;
@@ -30,11 +32,3 @@ function changeMemeProp(property, val) {
     renderCanvas();
 };
 
-function onSuccess(uploadedImgUrl) {
-    uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
-    document.querySelector('.share-btn').innerHTML = `
-    <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
-     title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
-      return false;">Facebook   
-    </a>`;
-};

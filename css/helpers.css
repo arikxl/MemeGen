@@ -27,3 +27,15 @@ h1, h2, h3, h4, h5, h6 {
 .show {
     transform: translateY(0);
 }
+
+button {
+    cursor: pointer;
+}
+
+p{
+    margin: 0;
+}
+
+.full-width{
+    width: 100%;
+}

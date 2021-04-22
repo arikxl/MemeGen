@@ -2,75 +2,67 @@
     flex-direction: row;
     width: 75%;
     justify-content: space-between;
-    display: none;
     align-items: center;
-    color: grey;
+    color: gray;
 }
 
 .control-panel-container {
+    background: linear-gradient(145deg, white, white, grey, silver);
     width: 38%;
-    background: linear-gradient(85deg, #7fff00, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     justify-content: space-around;
-    align-content: center;
-    padding: 15px 0;
+    padding: 10px 0;
     border-radius: 20px;
 }
 
 .editor-container {
-    background-color: rgba(255, 255, 255, .8);
+    background-color: white;
     flex-direction: column;
-    justify-content: center;
     font-size: 1rem;
-    width: 90%;
+    width: 96%;
     border: none;
     border-radius: 20px;
-
 }
 
-.editor-container >:not(last-child) {
-    margin-bottom: 5px;
+.editor-container * {
+ margin-bottom:2px;
 }
 
 .editor-container button {
-    background: linear-gradient(120deg, white, silver, white, silver);
-    background-size: 400% 400%;
-    animation: gradient 10s infinite;
-    max-height: 45px;
-    height: 45px;
-
+    background-color: rgb(255, 255, 255);
+    border: 1px solid silver;
+    min-height: 50px;
+    min-width: 50px;
+    font-family: 'RocknRoll One', sans-serif;
 }
 
-/* .text-line-container {
-    max-width: 300px;
+.editor-container button:last-child {
+    border-right: none;
+}
 
-} */
+.editor-container button:first-child {
+    border-left: none;
+}
+
+.editor-container button:hover {
+    background-color: rgba(0, 153, 255, .8);
+    color: white;
+}
 
 .text-line {
-    font-size: 16px;
+    font-size: 1rem;
     direction: rtl;
     padding: 10px;
-    width: 100%;
     direction: rtl;
     border-radius: 20px 20px 0 0;
     border: none;
     outline: none;
-
 }
-
-
-.add-txt-btn {
-    width: 20%;
-    height: 45px;
-    font-size: 25px;
-}
-
 
 .text-line-btns-container button {
-    width: 20%;
+    width: 100%;
     font-size: 20px;
-
 }
 
 .text-line-btns-image {
@@ -78,29 +70,71 @@
     padding: 5px;
 }
 
+.font-manipulation-container > * {
+    padding-left: 5px;  
+}
+
+.font-direction-input:last-child{
+padding-right: 5px;
+}
+
+.font-direction-input form *{
+    width: 200px;
+    display: flex;
+}
+
+
+
+
+
+input:not(:first-child) {
+    border: 1px solid white;
+    width: 50%;
+}
+
 
 .stickers-container {
-    background: linear-gradient(200deg, white, silver, white, silver);
-    background-size: 400% 400%;
-    animation: gradient 10s infinite;
+    background-color: rgba(192, 192, 192, .4);
     font-size: 2rem;
     color: red;
-    border-radius: 20px;
+    border-radius: 50px;
     justify-content: space-around;
-    padding: 5px;
 }
 
-
-.social-container >{
+.social-container {
     width: 100%;
-    display:flex;
+    display: flex;
+
 }
+
+.share-container {
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+}
+
+
+
 
 .social-container button {
+    /* font-family: 'RocknRoll One', sans-serif; */
     width: 100%;
-    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: grey;
 }
 
-.color-box {
-    width: 100px;
+.share-container button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150%;
+    border: none;
+    border-top: 1px solid silver;
+    border-radius: 0 0 20px 20px;
+    color: gray;
+    margin-bottom:none;
 }

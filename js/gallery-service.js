@@ -12,7 +12,8 @@ function renderGallery() {
          onclick="onImgPick(${img.id})"
          src="img/img-square/${img.id}.jpg"></div>`
     });
-    elGallery.innerHTML = strHTML
+    elGallery.innerHTML = strHTML;
+
 }
 
 function searchImg(currGallery) {
