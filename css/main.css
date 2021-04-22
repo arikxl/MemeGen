@@ -13,8 +13,8 @@
 
 body {
     user-select: none;
-    color:white;
-    font-family: 'RocknRoll One', sans-serif; 
+    color: white;
+    font-family: 'RocknRoll One', sans-serif;
 }
 
 @keyframes gradient {
@@ -43,11 +43,11 @@ button {
     cursor: pointer;
 }
 
-.close-modal{
-    font-size:5rem;
+.close-modal {
+    font-size: 5rem;
     position: absolute;
     left: 0;
-    color:white;
+    color: white;
     display: none;
 }
 
@@ -56,7 +56,7 @@ button {
     gap: 5px;
     grid-template-columns: repeat(auto-fill, 150px);
     display: grid;
-    background: linear-gradient(145deg,white,white, grey, silver);
+    background: linear-gradient(145deg, white, white, grey, silver);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     padding: 5px;
@@ -71,6 +71,7 @@ button {
     border: 3px solid white;
     border-radius: 10px;
 }
+
 .meme-img :hover {
     border: 3px solid white;
 }
@@ -100,9 +101,21 @@ button {
 
 
 @media (max-width: 880px) {
-    .gallery-container{
-        justify-content:space-around;
-        justify-content:space-around;
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, 125px);
+
+        justify-content: space-around;
     }
 
+    .img-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .meme-img {
+        width: 125px;
+        height: 125px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
 }

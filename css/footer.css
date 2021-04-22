@@ -4,7 +4,6 @@ footer {
   flex-direction: column;
   text-align: center;
   border-radius: 90px 90px 0 0;
-
   width: 100%;
 }
 
@@ -31,7 +30,7 @@ footer {
 
 .social-nav li:hover {
   box-shadow: 0px 0px 50px #09f;
- */
+  
 }
 
 .social-image {
@@ -42,14 +41,16 @@ footer {
 
 
 @media (max-width: 880px) {
- footer {
+  /* footer {} */
 
- }
+  .social-nav {
+    width: 50%;
 
- .social-nav {
-  width: 50%;
- 
+  }
+
 }
 
-
+.empty-div {
+  background-color: red;
+  height: 47vh;
 }
