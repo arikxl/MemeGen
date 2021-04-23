@@ -20,22 +20,51 @@
     justify-content: space-between;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
-.show {
+/* .show-hamburger {
     transform: translateY(0);
-}
+} */
 
 button {
     cursor: pointer;
 }
 
-p{
+p {
     margin: 0;
 }
 
-.full-width{
+.full-width {
     width: 100%;
+}
+
+a:link {
+    color: inherit;
+    font-size: inherit;
+    text-decoration:none;
+    justify-content:center;
+    height: 100%;
+    align-items: center;
+}
+
+/* visited link */
+a:visited {
+    color: inherit;
+}
+
+/* mouse over link */
+a:hover {
+    color: inherit;
+}
+
+/* selected link */
+a:active {
+    color: inherit;
 }

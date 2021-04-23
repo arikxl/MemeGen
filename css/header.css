@@ -54,56 +54,86 @@ header {
 }
 
 .nav-bar li:not(first-child) {
-border-left: 1px solid gray;
+    border-left: 1px solid gray;
 }
 
 .my-memes {
-    font-size:1rem;
+    font-size: 1rem;
+}
+
+.about-link {
+    text-align: center;
 }
 
 
-
-
 .toggle-menu-btn {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     outline: none;
     font-size: 2.2em;
-    width: 2em;
+    width: 12%;
     border: none;
     display: none;
-    height:3rem;
+    height: 3rem;
 }
 
-.toggle-menu-btn, .nav-btns {
+.toggle-menu-btn,
+.nav-btns {
     background-color: #09f;
     color: #fff;
-    
+
 }
 
 
-
+.show-hamburger {
+    .nav-bar {
+        display: none;
+    }
+}
 
 
 @media (max-width: 888px) {
     .toggle-menu-btn {
         display: inline-block;
     }
+
     .nav-bar {
         flex-direction: column;
         position: fixed;
         right: 0;
-        top: 5.625rem;
-        height: 30vh;
-        width: 40%;
-        border: 1px solid #ebebeb;
-        transform: translateY(-200%);
-        transition: transform .6s;
+        top: 3rem;
+        width: 12%;
+        /* transform: translateY(-200%);
+        transition: transform .6s; */
+        z-index: 10;
+        display:none;
     }
+
+    .nav-bar li {
+        width: 100%;
+        border: 1px solid silver;
+        background-color: #09f;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .nav-bar li:hover {
+        color: #09f;
+    }
+
+    .nav-bar li:first-child {
+        border-radius: 0;
+    }
+
+    .nav-bar li:last-child {
+        border-radius: 0 0 50px 50px;
+    }
+
     .nav-bar li>*:not(:last-child) {
         border-bottom: 1px solid #000;
     }
+
     .nav-bar li>* {
         width: 100%;
     }
@@ -116,3 +146,12 @@ border-left: 1px solid gray;
 }
 
 
+
+
+@media (max-width: 600px) {
+    .nav-bar li {
+        font-size: 1rem;
+        height: 100%;
+
+    }
+}

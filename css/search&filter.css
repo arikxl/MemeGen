@@ -9,14 +9,14 @@
 
 }
 
-/* .filter-dropdown {
+/* /* .filter-dropdown {
     background-color: #4CAF50;
     color: white;
     padding: 10px;
     border: none;
     width: 150px;
     justify-items: center; */
-}
+} 
 
 /* .filter-dropdown:hover,
 .filter-dropdown:focus {
@@ -117,6 +117,23 @@
 
 }
 
+@media (max-width: 765px) {
+    .filter {
+        font-size: 1rem;
+    }
+    .search-container {
+        width: 75%;
+        height: inherit;
+    }
+
+    .nav-bar li {
+        font-size:.7rem;
+    }
+
+
+
+}
+
 
 @media (max-width: 440px) {
     .filter {
@@ -125,7 +142,9 @@
     .search-container {
         height:40px;
     }
-    .search-filters li{
+
+    .nav-bar li {
+        font-size:.5rem;
     }
 
 }

@@ -40,15 +40,6 @@ body {
 }
 
 
-
-.close-modal {
-    font-size: 5rem;
-    position: absolute;
-    left: 0;
-    color: white;
-    display: none;
-}
-
 .gallery-container {
     width: 75%;
     gap: 5px;
@@ -95,7 +86,15 @@ body {
     display: block;
     border-radius: 20px;
     width: 100%;
-    
+}
+
+
+.close-modal {
+    font-size: 5rem;
+    position: absolute;
+    left: 0;
+    color: white;
+    display: none;
 }
 
 @media (max-width: 880px) {

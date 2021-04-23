@@ -126,7 +126,7 @@ function shareToFacebook(elForm, ev) {
         elShareBtn.innerHTML = `
             <a class="btn share-msg" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
              title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
-              return false;">Click again to share on Facebook   
+              return false;">Share on Facebook   
             </a>`;
     };
 };
