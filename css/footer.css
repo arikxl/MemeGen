@@ -7,10 +7,8 @@ footer {
   width: 100%;
 }
 
-
-
 .social-nav {
-  width: 12%;
+  width: 20%;
   height: 40px;
   display: flex;
   padding: 0;
@@ -39,16 +37,24 @@ footer {
 }
 
 
+.empty-div {
+  background-color: transparent;
+  height: 57vh;
+}
+
+@media (max-width: 1500px) {
+
+  .empty-div {
+    height: 40vh;
+  }
+}
 
 @media (max-width: 880px) {
   .social-nav {
     width: 50%;
 
   }
-
-}
-
-.empty-div {
-  background-color: transparent;
-  height: 47vh;
+  .empty-div {
+    height: 47vh;
+  }
 }

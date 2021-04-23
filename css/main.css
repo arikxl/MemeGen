@@ -87,6 +87,7 @@ body {
     animation: gradient 15s ease infinite;
     padding: 5px;
     border-radius: 20px;
+    margin-top: 10px;
 }
 
 #meme-canvas {
@@ -97,14 +98,37 @@ body {
     
 }
 
+@media (max-width: 880px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, 125px);
+        justify-content: space-around;
+    }
+    .close-modal {
+        font-size: 3rem;
+    }
+    .img-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .meme-img {
+        width: 125px;
+        height: 125px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+}
+
+
 
 @media (max-width: 880px) {
     .gallery-container {
         grid-template-columns: repeat(auto-fill, 125px);
-
         justify-content: space-around;
     }
-
+    .close-modal {
+        font-size: 3rem;
+    }
     .img-card {
         width: 100%;
         border-radius: 10px;

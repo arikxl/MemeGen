@@ -61,8 +61,8 @@
         <div class="control-panel-container flex">
             <div class="editor-container flex">
                 <div class="text-line-container flex ">
-                    <input class="text-line full-width" type="text" name="add-txt" oninput="onAddTxt(this)"
-                        placeholder="החלק המצחיק נכנס פה..." />
+                    <input class="text-line full-width" type="text" name="add-txt"
+                     oninput="onAddTxt(this)" placeholder="החלק המצחיק נכנס פה..." />
                 </div>
                 <div class="text-line-btns-container flex">
                     <button class="move-line-up-btn btn" onclick="onMoveLine('up')">⬆</button>
@@ -119,15 +119,15 @@
                     </div>
                 </div>
                 <div class="stickers-container flex"></div>
-                <div class="social-container space-between flex">
-                    <button class="save-btn btn" onclick="saveMeme(this)">Save</button>
+                <div class="social-container full-width space-between flex">
+                    <button class="save-btn btn full-width" onclick="saveMeme(this)">Save</button>
                     <button>
-                        <a class="download-btn btn" onclick="downloadCanvas(this)">Download</a>
+                        <a class="download-btn btn full-width" onclick="downloadCanvas(this)">Download</a>
                     </button>
                 </div>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="shareToFacebook(this, event)">
-                    <div class="share-container btn flex" type="submit">
-                        <button class="share-btn btn" type="submit">Share</button>
+                    <div class="share-container btn full-width flex" type="submit">
+                        <button class="share-btn btn full-width" type="submit">Share</button>
                         <input name="img" id="imgData" type="hidden" />
                     </div>
                 </form>

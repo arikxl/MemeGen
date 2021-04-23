@@ -78,7 +78,7 @@ function chooseTextAlign(align) {
 
     if (+align.value === 1) {
         gSelectedMeme.lines[0].pos.x = 50;
-        gSelectedMeme.lines[0].align = 'start';
+        gSelectedMeme.lines[0].align = 'end';
     };
     if (+align.value === 2) {
         gSelectedMeme.lines[0].pos.x = 250;
@@ -86,13 +86,13 @@ function chooseTextAlign(align) {
     }
     if (+align.value === 3) {
         gSelectedMeme.lines[0].pos.x = 450;
-        gSelectedMeme.lines[0].align = 'end';
+        gSelectedMeme.lines[0].align = 'start';
     };
     renderCanvas()
 };
 
 function chooseFont(font) {
-    changeMemeProp('strokeColor', font.value)
+    changeMemeProp('font', font.value)
 }
 
 function chooseFontColor(color) {
@@ -124,7 +124,7 @@ function shareToFacebook(elForm, ev) {
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
         // elShareBtn.style.width = '100%';
         elShareBtn.innerHTML = `
-            <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
+            <a class="btn share-msg" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
              title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
               return false;">Click again to share on Facebook   
             </a>`;

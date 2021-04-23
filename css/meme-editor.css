@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     color: gray;
+    display: none;
 }
 
 .control-panel-container {
@@ -25,15 +26,14 @@
     border-radius: 20px;
 }
 
+
 .editor-container * {
- margin-bottom:2px;
+    margin-bottom: 2px;
 }
 
 .editor-container button {
     background-color: rgb(255, 255, 255);
     border: 1px solid silver;
-    min-height: 50px;
-    min-width: 50px;
     font-family: 'RocknRoll One', sans-serif;
 }
 
@@ -62,7 +62,7 @@
 
 .text-line-btns-container button {
     width: 100%;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .text-line-btns-image {
@@ -70,28 +70,22 @@
     padding: 5px;
 }
 
-.font-manipulation-container > * {
-    padding-left: 5px;  
+.font-manipulation-container>* {
+    padding-left: 5px;
 }
 
-.font-direction-input:last-child{
-padding-right: 5px;
+.font-direction-input:last-child {
+    padding-right: 5px;
 }
 
-.font-direction-input form *{
-    width: 200px;
-    display: flex;
+.font-direction-input form * {
+    width: 180px;
 }
-
-
-
-
 
 input:not(:first-child) {
     border: 1px solid white;
     width: 50%;
 }
-
 
 .stickers-container {
     background-color: rgba(192, 192, 192, .4);
@@ -99,36 +93,23 @@ input:not(:first-child) {
     color: red;
     border-radius: 50px;
     justify-content: space-around;
+    margin-bottom: 5px;
 }
 
-.social-container {
-    width: 100%;
-    display: flex;
-
+.sticker:hover {
+    text-shadow: 0px 0px 30px #09f;
 }
-
-.share-container {
-    /* background-color: blue; */
-    width: 100%;
-    display: flex;
-}
-
-
-
 
 .social-container button {
-    /* font-family: 'RocknRoll One', sans-serif; */
     width: 100%;
     justify-content: center;
     text-align: center;
-    display: flex;
-    align-items: center;
     font-size: 1rem;
     color: grey;
+    margin-bottom: 0;
 }
 
 .share-container button {
-    display: flex;
     align-items: center;
     justify-content: space-around;
     width: 150%;
@@ -136,5 +117,106 @@ input:not(:first-child) {
     border-top: 1px solid silver;
     border-radius: 0 0 20px 20px;
     color: gray;
-    margin-bottom:none;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.share-msg{
+    font-size:1rem;
+}
+
+@media (max-width: 1450px) {
+    .editor-container {
+        font-size: 1.5rem;
+        width: 96%;
+    }
+
+    select {
+        width: 50%;
+    }
+ 
+    .editor-container button {
+        font-size: 1.5rem;
+        height: 50px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .editor-container {
+        font-size: .9rem;
+        width: 96%;
+    }
+
+    .font-direction-input form * {
+        width: 200%;
+    }
+
+    .editor-container button {
+        font-size: 1rem;
+        height: 40px;
+    }
+
+    .control-panel-container {
+        margin-top: 10px;
+    }
+    .share-msg{
+        font-size:.7rem;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .editor-container {
+        font-size: .5rem;
+        width: 96%;
+    }
+
+    .font-direction-input form * {
+        width: 90%;
+    }
+
+    .editor-container button {
+        font-size: .5rem;
+        height: 30px;
+    }
+
+    .editor-container img {
+        width: 20px;
+    }
+
+    .text-line {
+        font-size: .7rem;
+        height: 20px;
+    }
+
+    input:last-child {
+        height: 20px;
+    }
+
+    select {
+        font-size: .6rem;
+        width: 80%;
+    }
+
+    .editor-container button {
+        font-size: .7rem;
+        height: 30px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .meme-editor-container {
+        flex-direction: column;
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+        color: gray;
+    }
+
+    .control-panel-container {
+        width: 60%;
+    }
+
 }
