@@ -20,7 +20,7 @@
 .editor-container {
     background-color: white;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 3rem;
     width: 96%;
     border: none;
     border-radius: 20px;
@@ -35,6 +35,8 @@
     background-color: rgb(255, 255, 255);
     border: 1px solid silver;
     font-family: 'RocknRoll One', sans-serif;
+    font-size: 3rem;
+    height: 70px;
 }
 
 .editor-container button:last-child {
@@ -51,7 +53,7 @@
 }
 
 .text-line {
-    font-size: 1rem;
+    font-size: 3rem;
     direction: rtl;
     padding: 10px;
     direction: rtl;
@@ -79,17 +81,23 @@
 }
 
 .font-direction-input form * {
-    width: 180px;
+    width: 380px;
+}
+
+select {
+    width: 50%;
 }
 
 input:not(:first-child) {
     border: 1px solid white;
     width: 50%;
+    height:30px;
+    margin-top: 10px;
 }
 
 .stickers-container {
     background-color: rgba(192, 192, 192, .4);
-    font-size: 2rem;
+    font-size: 3rem;
     color: red;
     border-radius: 50px;
     justify-content: space-around;
@@ -104,7 +112,7 @@ input:not(:first-child) {
     width: 100%;
     justify-content: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 3rem;
     color: grey;
     margin-bottom: 0;
 }
@@ -118,19 +126,43 @@ input:not(:first-child) {
     border-radius: 0 0 20px 20px;
     color: gray;
     margin: 0;
-    font-size: 1rem;
+    font-size: 3rem;
 }
 
 .share-msg{
     font-size:1rem;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 2450px) {
+    .editor-container {
+        font-size: 2.5rem;
+        width: 96%;
+    }
+}
+@media (max-width: 2100px) {
     .editor-container {
         font-size: 1.5rem;
         width: 96%;
     }
+    .font-direction-input form * {
+        width: 280px;
+    }
+    .text-line {
+        font-size: 1.5rem;
+   
+    }
+}
 
+
+@media (max-width: 1450px) {
+    .editor-container {
+        font-size: 1.5rem;
+        width: 96%;
+        font-size: 1rem;
+    }
+    .font-direction-input form * {
+        width: 180px;
+    }
     select {
         width: 50%;
     }
@@ -139,6 +171,11 @@ input:not(:first-child) {
         font-size: 1.5rem;
         height: 50px;
     }
+    .stickers-container{
+        font-size: 2rem;
+    }
+   
+
 }
 
 @media (max-width: 1050px) {
@@ -201,6 +238,9 @@ input:not(:first-child) {
     .editor-container button {
         font-size: .7rem;
         height: 30px;
+    }
+    .stickers-container {
+        font-size:1.5rem;
     }
 
 }

@@ -19,40 +19,42 @@
 
 <body class="margin-auto" onload="onInit()">
     <header>
-        <button class="toggle-menu-btn btn hidden" onclick="openHeaderMenu()">&#9776;</button>
+        <button class="toggle-menu-btn btn " onclick="openHeaderMenu()">&#9776;</button>
         <div class="nav-bar-container flex space-between">
             <div class="head-logo logo">The Meme Show</div>
             <ul class="nav-bar flex clean-list space-between">
                 <li class="gallery-pointer flex pointer" onclick="closeModal()">Gallery</li>
                 <li class="my-memes flex pointer">My Memes</li>
-
                 <li>
                     <a class="about flex pointer about-link" href="https://arikxl.github.io/arik-gallery/"
                         target="_blank">About</a>
                 </li>
             </ul>
         </div>
-
-
-
         <div class="close-modal pointer" onclick="closeModal()">&#10005;</div>
     </header>
 
 
     <section class="search-container margin-auto flex">
         <div class="search-word-dropdown dropdown flex">
-            <label for="search" class="filter-input"></label>
-            <form onkeyup="onSearchImg(this)">
-                <input list="category" autocomplete="off" placeholder="  Click to Search..." />
+                <input list="filters" autocomplete="off" placeholder="  Click to Search..."
+                name="search" type="text" oninput="onSearchInput(this.value,event)"/>
                 <datalist id="category"></datalist>
-            </form>
             <ul class="search-filters flex clean-list ">
-                <li class="filter-crazy filter pointer">Crazy</li>
-                <li class="filter-other filter pointer">Other</li>
-                <li class="filter-fight filter pointer">Fight</li>
-                <li class="filter-stupid filter pointer">Stupid</li>
-                <li class="filter-sex filter pointer">Sex</li>
-                <li class="filter-funny filter pointer">Funny</li>
+                <li class="filter-crazy filter pointer"
+                 onclick="onSearchInput(this.innerText,event)">Crazy</li>
+                <li class="filter-other filter pointer"
+                onclick="onSearchInput(this.innerText,event)">Other</li>
+                <li class="filter-fight filter pointer"
+                onclick="onSearchInput(this.innerText,event)">Fight</li>
+                <li class="filter-stupid filter pointer"
+                onclick="onSearchInput(this.innerText,event)">Stupid</li>
+                <li class="filter-sex filter pointer"
+                onclick="onSearchInput(this.innerText,event)">Sex</li>
+                <li class="filter-funny filter pointer"
+                onclick="onSearchInput(this.innerText,event)">Funny</li>
+                <li class="filter-all filter pointer"
+                onclick="location.reload()">All</li>
             </ul>
         </div>
     </section>
@@ -72,16 +74,16 @@
                         placeholder="החלק המצחיק נכנס פה..." />
                 </div>
                 <div class="text-line-btns-container flex">
-                    <button class="move-line-up-btn btn" onclick="onMoveLine('up')">⬆</button>
-                    <button class="move-line-down-btn btn" onclick="onMoveLine('down')">⬇</button>
-                    <button class="switch-text-line-btn btn" onclick="">
+                    <button class="move-line-up-btn btn" onclick="onMoveLine(-5)">⬆</button>
+                    <button class="move-line-down-btn btn" onclick="onMoveLine(5)">⬇</button>
+                    <button class="switch-text-line-btn btn" onclick="onSwitchLine()">
                         <img class="text-line-btns-image"
                             src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" />
                     </button>
                     <button class="add-text-line-btn btn" onclick="onAddLine()">
                         <img class="text-line-btns-image" src="img/ICONS/add.png" alt="" />
                     </button>
-                    <button class="delete-text-line-btn btn" onclick="clearCanvas()">
+                    <button class="delete-text-line-btn btn" onclick="clearLine()">
                         <img class="text-line-btns-image" src="img/ICONS/trash.png" alt="" />
                     </button>
                 </div>

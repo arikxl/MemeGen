@@ -1,32 +1,40 @@
 'use strict'
 
-
 const IMG_KEY = 'imgs';
-var filteredGallery;
+var gFilterBy = '';
 
 function renderGallery() {
-    let elGallery = document.querySelector('.gallery-container')
-    let strHTML = ``
-    gMemes.forEach(img => {
-        strHTML += `<div class="meme-img pointer"><img class="img-card"
+    const imgs = getImgs();
+    let strHTML = imgs.map(img => {
+        return `<div class="meme-img pointer"><img class="img-card"
          onclick="onImgPick(${img.id})"
          src="img/img-square/${img.id}.jpg"></div>`
     });
-    elGallery.innerHTML = strHTML;
-
+    document.querySelector('.gallery-container').innerHTML = strHTML.join('');
 }
 
-function searchImg(currGallery) {
-    let filtered = currGallery.filter(meme =>
-        meme.keywords.find(keyword =>
-            keyword.toLowerCase().includes(elSearch.value.toLowerCase())
-        )
-    )
-    return filtered;
-};
+function setMemesFilter(txt) {
+    gFilterBy = txt;
+}
 
 
+function getImgs() {
+    if (!gFilterBy) return gMemes;
+    return gMemes.filter(meme => meme.category.includes(gFilterBy.toLowerCase()))
+}
 
 function _saveImgToStorage() {
     saveToStorage(IMG_KEY, gImgs)
 };
+
+function addMouseListeners() {
+    gElCanvas.addEventListener('mousemove', onMove);
+    gElCanvas.addEventListener('mousedown', onDown);
+    gElCanvas.addEventListener('mouseup', onUp);
+}
+
+function addTouchListeners() {
+    gElCanvas.addEventListener('touchmove', onMove);
+    gElCanvas.addEventListener('touchstart', onDown);
+    gElCanvas.addEventListener('touchend', onUp);
+}

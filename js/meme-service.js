@@ -12,7 +12,7 @@ const gMemes = [{
     {
         id: gId++,
         image: 'img/img-square/1002.jpg',
-        category: 'funny'
+        category:'funny'
     },
     {
         id: gId++,
@@ -47,7 +47,7 @@ const gMemes = [{
     {
         id: gId++,
         image: 'img/img-square/1009.jpg',
-        category: 'fight'
+        category:'fight'
     },
     {
         id: gId++,
@@ -103,7 +103,6 @@ const gMemes = [{
 var gSelectedMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
-    // exportReady: false,
     lines: [{
         txt: '',
         pos: {
@@ -114,9 +113,13 @@ var gSelectedMeme = {
         align: 'center',
         fontColor: 'white',
         strokeColor: 'black',
-        // isDragging: false,
         font: 'Heebo, sans-serif',
     }]
-}
+};
 
 var gMyMemes = [];
+
+// function getCurrLine(idx) {
+//     console.log('gMemes.lines[idx]:', gMemes.lines[idx])
+//     return gMemes.lines[idx];
+// }

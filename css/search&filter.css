@@ -6,22 +6,9 @@
     font-size: 2rem;
     max-height: 70px;
     height: 70px;
-
 }
 
-/* /* .filter-dropdown {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 150px;
-    justify-items: center; */
-} 
 
-/* .filter-dropdown:hover,
-.filter-dropdown:focus {
-    background-color: #3e8e41;
-} */
 
 .filter-input {
     font-size: 1rem;
@@ -29,6 +16,7 @@
     border: none;
     border-bottom: 1px solid #ddd;
     width: 150px;
+    background-color:red
 }
 
 .search-word-dropdown {
@@ -42,6 +30,7 @@
     border: none;
     width: 150px;
     outline: none;
+    margin:0;
 }
 
 
@@ -68,7 +57,6 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    /* font-size:1rem; */
 }
 
 
@@ -105,6 +93,9 @@
 
 .filter-other {
     font-size: 0.5rem;
+}
+.filter-all {
+    font-size: 2.2rem;
 }
 
 

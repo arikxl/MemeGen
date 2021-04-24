@@ -1,7 +1,7 @@
 'use strict'
 
 const gElCanvas = document.querySelector('#meme-canvas');
-
+var gCurrLine;
 
 function renderCanvas() {
     var img = new Image();
@@ -28,79 +28,91 @@ function renderStickers() {
     elStickersPanel.innerHTML = strHTML
 }
 
+// function getCurrLine(index) {
+//     return gMeme.lines[index]
+// }
 
-
-function drawText() {
-    var currLine = gSelectedMeme.lines[0];
+function drawText(line) {
+    var currLine = line;
     gCtx.lineWidth = 0.5;
     gCtx.fillStyle = currLine.fontColor;
     gCtx.strokeStyle = currLine.strokeColor;
     gCtx.font = `${currLine.size}px ${currLine.font}`;
     gCtx.textAlign = `${currLine.align}`;
     gCtx.textBaseline = 'middle';
-    gCtx.direction = 'rtl',
-        gCtx.fillText(currLine.txt, currLine.pos.x, currLine.pos.y);
+    gCtx.direction = 'rtl';
+    gCtx.fillText(currLine.txt, currLine.pos.x, currLine.pos.y);
     gCtx.strokeText(currLine.txt, currLine.pos.x, currLine.pos.y);
+    gCurrLine = line;
 }
 
+
+
 function onAddTxt(text) {
-    changeMemeProp('txt', text.value)
+    changeMemeProp('txt', text.value);
 }
 
 function onAddLine() {
-    addTextLine()
-    renderCanvas()
+    addTextLine();
+    renderCanvas();
 }
+var count = 0;
 
+function onSwitchLine() {
+    if (gSelectedMeme.lines.length === 1) return;
+    gSelectedMeme.selectedLineIdx++;
+
+    if (gSelectedMeme.selectedLineIdx >2) gSelectedMeme.selectedLineIdx ===0;
+    console.log('gSelectedMeme.selectedLineIdx:', gSelectedMeme.selectedLineIdx)
+    // dont know why
+}
 
 function onMoveLine(val) {
-    var textLine = gSelectedMeme.lines[0]
-    var linHeight = textLine.pos.y
-    if (val === 'up') textLine.pos.y = linHeight - 5
-    else textLine.pos.y = linHeight + 5
-    renderCanvas()
+    gCurrLine.pos.y += val;
+    renderCanvas();
 }
 
-
-
-function clearCanvas() {
-    gSelectedMeme.lines[0].txt = '';
+function clearLine() {
+    gCurrLine.txt = '';
     document.querySelector('.text-line').value = '';
     renderCanvas();
 }
 
 function chooseFontSize(fontSize) {
-    changeMemeProp('size', +fontSize.value)
+    changeMemeProp('size', +fontSize.value);
     document.querySelector('.font-size-input span').innerText = +fontSize.value;
 };
 
 function chooseTextAlign(align) {
 
     if (+align.value === 1) {
-        gSelectedMeme.lines[0].pos.x = 50;
-        gSelectedMeme.lines[0].align = 'end';
+        gCurrLine.pos.x = 50;
+        gCurrLine.align = 'end';
     };
     if (+align.value === 2) {
-        gSelectedMeme.lines[0].pos.x = 250;
-        gSelectedMeme.lines[0].align = 'center';
+        gCurrLine.pos.x = 250;
+        gCurrLine.align = 'center';
     }
     if (+align.value === 3) {
-        gSelectedMeme.lines[0].pos.x = 450;
-        gSelectedMeme.lines[0].align = 'start';
+        gCurrLine.pos.x = 450;
+        gCurrLine.align = 'start';
     };
     renderCanvas()
 };
 
 function chooseFont(font) {
-    changeMemeProp('font', font.value)
+    changeMemeProp('font', font.value);
+    renderCanvas();
 }
 
 function chooseFontColor(color) {
-    changeMemeProp('fontColor', color.value)
+    changeMemeProp('fontColor', color.value);
+    renderCanvas();
 }
 
 function chooseStrokeColor(color) {
-    gSelectedMeme.lines[0].strokeColor = color.value;
+    gCurrLine.strokeColor = color.value;
+    renderCanvas();
 }
 
 function drawSticker(sticker) {
@@ -122,10 +134,10 @@ function shareToFacebook(elForm, ev) {
     function onSuccess(uploadedImgUrl) {
         var elShareBtn = document.querySelector('.share-btn');
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
-        // elShareBtn.style.width = '100%';
         elShareBtn.innerHTML = `
             <a class="btn share-msg" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}"
-             title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
+             title="Share on Facebook" target="_blank"
+              onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}');
               return false;">Share on Facebook   
             </a>`;
     };
@@ -144,7 +156,6 @@ function doUploadImg(elForm, onSuccess) {
         .catch(function (err) {
             console.error(err);
         });
-
 };
 
 
@@ -155,7 +166,6 @@ function saveMeme() {
         imgId: gMyMemesId++,
         lines: [...gSelectedMeme.lines]
     });
-    console.table(gMyMemes)
+    console.table(gMyMemes);
     saveToStorage('My MEMES', gMyMemes);
-
 }

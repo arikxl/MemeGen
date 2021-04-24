@@ -5,13 +5,18 @@ var gCanvas;
 var gCtx;
 
 function onInit() {
-    console.log('LETS MEME!');
     gCanvas = document.querySelector('#meme-canvas');
     gCtx = gCanvas.getContext('2d');
     renderGallery();
-
 }
 
+function onSearchInput(txt, ev) {
+    if (ev.type === 'click') {
+        txt.toLowerCase()
+    }
+    setMemesFilter(txt)
+    renderGallery()
+}
 
 function onImgPick(id) {
     gMemes.selectedImgId = id;
@@ -25,11 +30,6 @@ function openModal() {
     document.querySelector('.meme-editor-container').style.display = 'flex';
     renderCanvas()
 }
-
-
-
-
-
 
 function closeModal() {
     document.querySelector('.gallery-container').style.display = 'grid';

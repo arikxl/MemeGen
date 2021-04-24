@@ -8,7 +8,6 @@ function initCanvas() {
     renderCanvas();
 }
 
-
 function addTextLine() {
     if (gSelectedMeme.lines.length > 2) return;
     gSelectedMeme.lines.push({
@@ -23,12 +22,16 @@ function addTextLine() {
         strokeColor: 'black',
         font: 'Heebo, sans-serif',
     });
+    if (gSelectedMeme.lines.length === 3) {
+        gSelectedMeme.lines[2].pos.y = 350;
+        gSelectedMeme.lines[2].txt = 'מתוקההה כמה שורות';
+    }
     console.table(gSelectedMeme.lines);
-    // renderCanvas()
+    renderCanvas();
 }
 
 function changeMemeProp(property, val) {
-    gSelectedMeme.lines[0][property] = val;
+    gCurrLine[property] = val;
     renderCanvas();
 };
 
