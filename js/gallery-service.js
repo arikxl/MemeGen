@@ -3,6 +3,8 @@
 const IMG_KEY = 'imgs';
 var gFilterBy = '';
 
+
+
 function renderGallery() {
     const imgs = getImgs();
     let strHTML = imgs.map(img => {
@@ -17,10 +19,14 @@ function setMemesFilter(txt) {
     gFilterBy = txt;
 }
 
-
 function getImgs() {
     if (!gFilterBy) return gMemes;
     return gMemes.filter(meme => meme.category.includes(gFilterBy.toLowerCase()))
+}
+
+function clearSearchFilter() {
+    gFilterBy = '';
+    renderGallery();
 }
 
 function _saveImgToStorage() {
